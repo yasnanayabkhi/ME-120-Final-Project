@@ -11,7 +11,7 @@ This project will investigate the inhibition potential of Dacomitinib by underst
 Dacomitinib-FtsZ complex using computational approaches, including docking and molecular dynamics.
 
 FtsZ is an essential protein for cell division in S. Aureus, including methicillin-resistant strains (MRSA).
-Inhibiting FtsZ can essentially stop bacterial proliferation which becomes a potential therapeutic strategies for
+Inhibiting FtsZ can essentially stop bacterial proliferation which becomes a potential therapeutic target for
 developing a new antibiotic. 
 
 (ADD MORE LATER) 
