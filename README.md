@@ -14,6 +14,10 @@ FtsZ is an essential protein for cell division in S. Aureus, including methicill
 Inhibiting FtsZ can essentially stop bacterial proliferation which becomes a potential therapeutic target for
 developing a new antibiotic. 
 
-(ADD MORE LATER) 
+(ADD MORE LATER) talk how dacomitinib is used as a cancer drug but a virtual screening identifed it as a inhibitor
+they need in vitro and in vivo assay and found out it does inhibit, but they didn't study the dynamic stability of
+the complex which is essential.... then lead to objectives babababa
+
+Objectives:
 
 ------------------------------------------------------------------------------------------------------------------
