@@ -1,27 +1,28 @@
-# PDB Procedure
+## PDB Procedure
 
 Website to obtain 1C9 (Dacomitinib): https://www.rcsb.org/ligand/1C9
 Website to obtain 4DXD (FtsZ with GDP/723): https://www.rcsb.org/structure/4DXD
 
-Procedure to convert Dacomitinib from cif to pdb format:
-Download Definition (CIF Format) of 1C9.
-Load 1C9.cif into PyMOL
-load /path/to/1C9.cif
-Convert into a .pdb
-save 1C9.pdb
-Can be found in PDB, Docking Results, etc. Folder
+# Procedure to convert Dacomitinib from cif to pdb format:
 
-Procedure to clean pdb 4DXD of S. Aureus by removal of inhibitor (723) to just get FtsZ (happens via Allosteric pocket):
-Notes: GDP turns into GTP (energy source) not affected
-When inhibitor binds to allosteric site → prevents the filament formations in order to perform the function of bacterial cellular division help
+- Download Definition (CIF Format) of 1C9.
+- Load 1C9.cif into PyMOL
+- load /path/to/1C9.cif
+- Convert into a .pdb
+- save 1C9.pdb
+(Can be found in PDB, Docking Results, etc. Folder)
 
-Download 4DXD PDB from https://www.rcsb.org/structure/4DXD via legacy PDB format
-Open PyMOL (download link: https://www.pymol.org/)
-Goal: To remove inhibitor 723 (PC190723) and remove any other heteroatoms 
-Perform next in terminal
-load /path/to/4DXD.pdb 
-remove hetatm and not resn GDP (removes all heteroatoms such as water including 723 and leaves GDP)
+# Procedure to clean PDB 4DXD of S. Aureus by removal of inhibitor (723) to obtain FtsZ:
 
-save 4DXD_clean_with_GDP.pdb (locate it into your storage) 
-Can be found in PDB, Docking Results, etc. Folder
+(Notes: GDP turns into GTP (energy source) later on) 
+(When inhibitor binds to allosteric site --> prevents the filament formation which perform the function of bacterial cellular division help)
+
+- Download 4DXD PDB from https://www.rcsb.org/structure/4DXD via legacy PDB format
+- Open PyMOL (download link: https://www.pymol.org/)
+- Goal: To remove inhibitor 723 (PC190723) and remove any other heteroatoms 
+- Perform next in terminal
+- load /path/to/4DXD.pdb 
+- In terminal, type: remove hetatm and not resn GDP (removes all heteroatoms such as water including 723 and leaves GDP)
+- In terminal, type: save 4DXD_clean_with_GDP.pdb (locate it into your storage) 
+(Can be found in PDB, Docking Results, etc. Folder)
 
