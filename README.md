@@ -1,11 +1,13 @@
-------------------------------------------------------------------------------------------------------------------
 # Computational Study of Dacomitinib Inhibition of Staphylococcus Aureus FtsZ using Docking and Molecular Dynamics
 
-Authors: Yasna Nayabkhil, Natalia Pulido, Louis Rathel
-------------------------------------------------------------------------------------------------------------------
+Use the same project title as your report and video.
 
-------------------------------------------------------------------------------------------------------------------
-## Description 
+## Project Summary
+
+Briefly state:
+- the question, problem, or objective
+- the computational method or workflow
+- the main output or result
 
 This project will investigate the inhibition potential of Dacomitinib by understanding the dynamic stability of 
 Dacomitinib-FtsZ complex using computational approaches, including docking and molecular dynamics.
@@ -16,24 +18,7 @@ developing a new antibiotic.
 
 (ADD MORE LATER) talk how dacomitinib is used as a cancer drug but a virtual screening identifed it as a inhibitor
 they need in vitro and in vivo assay and found out it does inhibit, but they didn't study the dynamic stability of
-the complex which is essential.... then lead to objectives babababa
-
-Objectives:
-
-------------------------------------------------------------------------------------------------------------------
-
-
-WORKFLOW TO FOLLOW FOR READ ME 
-# Project Title
-
-Use the same project title as your report and video.
-
-## Project Summary
-
-Briefly state:
-- the question, problem, or objective
-- the computational method or workflow
-- the main output or result
+the complex which is essential.... then lead to objectives 
 
 ## Package Contents
 
