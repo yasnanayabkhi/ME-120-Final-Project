@@ -1,0 +1,14 @@
+## Name & Description of files for Cleaning/Preparing PDBs
+
+# Original Dacomitinib (1C9) CIF format from rcsb.org 
+- 1C9.cif
+
+# Converted CIF to 1C9.pdb using PyMOL
+- 1C9.pdb
+
+
+# Original 4DXD PDB of FtsZ to be cleaned from rcsb.org
+- 4DXD.PDB
+
+# Cleaned 4DXD PDB of FtsZ with removal of 723 (kept GDP) using PyMOL
+- 4DXD_clean_with_GDP.pdb
