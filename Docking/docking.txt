@@ -1,1 +1,46 @@
-ADD PROCEDURE CLEANED VERSION ONCE DECIDED
+## Docking Procedure
+
+Autodock Vina via Webina: https://durrantlab.pitt.edu/webina/
+4DXD PDB download link: https://www.rcsb.org/structure/4DXD
+Paper experiment based on: https://pmc.ncbi.nlm.nih.gov/articles/PMC8792978/
+
+# Procedure to extract binding pocket box using PDB 4DXD via location of 723 binding site
+
+- Obtain the 4DXD.pdb from https://www.rcsb.org/structure/4DXD
+- Load structure in PyMOL
+     a. load /path/to/4DXD.pdb
+     b. In terminal, type: select ligand723, resn 9PC
+     c. In terminal, type: centerofmass ligand723
+         * Obtained center of mass: [-13.630, 41.434, 18.182]
+     d. Determine an appropriate box size to provide enough space within the binding pocket region extracted from 723
+         * Try different box sizes in order to determine best size box
+         * 1C9 binds in same region as 723 according to the paper 
+     e. Compare the image of the box to location of 723 from PDB 4DXD 
+
+# Procedure to be performed on Webina to dock Dacomitinib (1C9) to FtsZ via defined box from procedure above
+
+- Obtain the previously cleaned PDb of Dacomitinib (1C9) and FtsZ with GDP ready to be used
+- open https://durrantlab.pitt.edu/webina/ 
+- In input (PDBQT) files, upload receptor --> 4DXD_clean_with_GDP.pdb and upload ligand 1C9.pdb
+     a. A pop up will appear due to the file format not being PDBQT format --> click "CONVERT" with
+        PDBQTConvert, then add hydrogen atoms at pH 7.4
+     b. Make sure to check generate 3D coordinates for 1C9.pdb. It converts using builtin OpenBabel 
+     c. You can download the created PDBQTs at the bottom of website page
+(Can be found in PDB, Docking Results, etc. Folder)
+ - Correct Pose --> leave blank due to not knowing what correct pose for Dacomitinib-FtsZ
+ - Docking Box: Center of Mass: [-13.630, 41.434, 18.182], size x,y,z = (CHANGE TO WHAT WAS BEST)
+ - CPU: use 3 and Exhaustiveness: use (CHANGE TO WHAT WAS BEST)
+ - Ignore advanced parameters
+ - Wait for the results to run (note runtime)
+ - Look at scoring and compare the pose to the paper --> see if the pose is the same
+(Can be found in PDB, Docking Results, etc. Folder)
+ 
+ # Procedure to convert the PDBQT into a complete Dacomitinib-FtsZ complex in PyMOL to be prepared for GROMACS
+ - open PyMOL
+ - Following is done in terminal:
+     a. load /path/to/webina_out.PDBQT
+     b. split_states webina_out (turn off all beside pose 1 on right sidebar)
+     c. load /path/to/4DXD_clean_with_GDP.pdb
+     d. save FtsZ-Dacomitinib.pdb, 4DXD_clean_with_GDP or webina_out_0001
+(Can be found in PDB, Docking Results, etc. Folder)
+
