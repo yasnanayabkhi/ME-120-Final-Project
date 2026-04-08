@@ -16,7 +16,8 @@ gmx mdrun -deffnm md
 
 # Correct for Periodicity Effects
 # Generates 1 file: md_noPBC.xtc
-gmx trjconv -s md.tpr -f md.xtc -o md_noPBC.xtc -pbc mol -center
+# echo "1\n0", group 1 is Protein, group 0 is System for output
+echo "1\n0" | gmx trjconv -s md.tpr -f md.xtc -o md_noPBC.xtc -pbc mol -center
 
 # tell user MD simulation is done 
 echo "MD simulation is completed.\n"
