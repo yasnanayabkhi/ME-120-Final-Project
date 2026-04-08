@@ -11,7 +11,7 @@
 gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
 
 # To run the NVT equilibration
-# Generates 4 files: nvt.log, nvt.edr, nvt.trr, nvt.gro, nvt.cpt
+# Generates 5 files: nvt.log, nvt.edr, nvt.trr, nvt.gro, nvt.cpt
 gmx mdrun -deffnm nvt
 
 # To analyze the temperature progress during NVT steps
