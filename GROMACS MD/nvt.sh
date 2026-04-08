@@ -10,7 +10,7 @@
 # Generates 1 file: nvt.tpr
 gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
 
-# To run the NVT equilibration
+# To run the NVT equilibration (310K)
 # Generates 5 files: nvt.log, nvt.edr, nvt.trr, nvt.gro, nvt.cpt
 gmx mdrun -deffnm nvt
 
