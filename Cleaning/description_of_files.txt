@@ -2,12 +2,19 @@
 ## Name & Description of files for Cleaning/Preparing PDBs
 #---------------------------------------------------------
 
+------------------------
+ Required Files & Inputs
+------------------------
+
 # Original Dacomitinib (1C9) CIF format from rcsb.org 
 - 1C9.cif
 
 # Converted CIF to 1C9.pdb using PyMOL
 - 1C9.pdb
 
+---------
+ Outputs
+---------
 
 # Original 4DXD PDB of FtsZ to be cleaned from rcsb.org
 - 4DXD.PDB
