@@ -11,7 +11,7 @@
 gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
 
 # To run the NVT equilibration
-# Generates 4 files: nvt.log, nvt.edr, nvt.trr, nvt.gro
+# Generates 4 files: nvt.log, nvt.edr, nvt.trr, nvt.gro, nvt.cpt
 gmx mdrun -deffnm nvt
 
 # To analyze the temperature progress during NVT steps
@@ -21,4 +21,4 @@ gmx energy -f nvt.edr -o temperature.xvg
 
 # tell user NVT equilibration is done 
 echo "NVT equilibration is completed.\n"
-echo "The file generated are nvt.tpr, nvt.log, nvt.edr, nvt.trr, nvt.gro, temperature.xvg"
+echo "The file generated are nvt.tpr, nvt.log, nvt.edr, nvt.trr, nvt.gro, nvt.cpt, temperature.xvg"
