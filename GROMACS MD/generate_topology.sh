@@ -3,6 +3,7 @@
 #--------------------------------------------------------
 # Script to produce topology of Dacomitinib-FtsZ complex
 # 1st step of MD: Generate Topology
+# Files required: FtsZ-Dacomitinib.pdb
 #--------------------------------------------------------
 
 # Clean the PDB (removal of water)
