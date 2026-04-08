@@ -2,7 +2,7 @@
 
 #----------------------------------------------------
 # Script for MD analysis of Dacomitinib-FtsZ system
-# 7th step of MD: MD analysis 
+# 8th step of MD: MD analysis 
 # Files required: md.tpr, md_noPBC.xtc, em.tpr
 #----------------------------------------------------
 
