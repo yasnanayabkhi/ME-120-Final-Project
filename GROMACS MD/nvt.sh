@@ -17,6 +17,7 @@ gmx mdrun -deffnm nvt
 # To analyze the temperature progress during NVT steps
 # Generates 1 file: temperature.xvg
 # echo 16 0 to choose group 16 (temperature) then 0 to exit
+# (can be plotted using md_figures.ipynb if needed)
 gmx energy -f nvt.edr -o temperature.xvg
 
 # tell user NVT equilibration is done 

@@ -17,11 +17,13 @@ gmx mdrun -deffnm nvt
 # To analyze the pressure progress during NPT steps
 # Generates 1 file: pressure.xvg
 # echo 17 0 to choose group 17 (pressure) then 0 to exit
+# (can be plotted using md_figures.ipynb if needed)
 gmx energy -f npt.edr -o pressure.xvg
 
 # To analyze the density progress during NPT steps
 # Generates 1 file: density.xvg
 # echo 23 0 to choose group 23 (density) then 0 to exit
+# (can be plotted using md_figures.ipynb if needed)
 gmx energy -f npt.edr -o density.xvg
 
 # tell user NPT equilibration is done 
