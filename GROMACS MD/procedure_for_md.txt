@@ -1,1 +1,6 @@
+#-----------------------------
+# Molecular Dynamics Procedure
+#-----------------------------
+
+
 WRITE DEFINED PROCEDURE THEN ALSO WRITE SCRIPTS (.sh) FOR EACH STEP OF THE SIMULATION DONE for reproducibility 

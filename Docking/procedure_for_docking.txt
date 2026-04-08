@@ -1,5 +1,5 @@
 #-------------------
-## Docking Procedure
+# Docking Procedure
 #-------------------
 
 Autodock Vina via Webina: https://durrantlab.pitt.edu/webina/
