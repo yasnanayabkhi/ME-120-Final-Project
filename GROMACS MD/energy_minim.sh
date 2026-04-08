@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#-----------------------------------------------------------
+#----------------------------------------------------------------------
 # Script for Energy Minimization of Dacomitinib-FtsZ system
 # 4th step of MD: Energy Minimization
-# Files required: minim.mdp, FtsZ-Dacomitinib_solv_ions.gro
-#-----------------------------------------------------------
+# Files required: minim.mdp, FtsZ-Dacomitinib_solv_ions.gro, topol.top
+#----------------------------------------------------------------------
 
 # To create em.tpr 
 # Generates 1 file: em.tpr

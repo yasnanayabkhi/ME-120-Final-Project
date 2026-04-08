@@ -3,7 +3,7 @@
 #-------------------------------------------
 # Script for NVT of Dacomitinib-FtsZ system
 # 5th step of MD: NVT
-# Files required: nvt.mdp, em.gro
+# Files required: nvt.mdp, em.gro, topol.top
 #-------------------------------------------
 
 # To create nvt.tpr

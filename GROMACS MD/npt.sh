@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#-------------------------------------------
+#--------------------------------------------
 # Script for NPT of Dacomitinib-FtsZ system
 # 6th step of MD: NPT
-# Files required: npt.mdp, nvt.gro
-#-------------------------------------------
+# Files required: npt.mdp, nvt.gro, topol.top
+#--------------------------------------------
 
 # To create npt.tpr
 # Generates 1 file: npt.tpr

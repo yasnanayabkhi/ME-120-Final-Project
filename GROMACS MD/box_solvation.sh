@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#----------------------------------------------
+#---------------------------------------------------------
 # Script to create box and solvate
 # 2nd step of MD: Define box & Solvate
-# Files required: FtsZ-Dacomitinib_procssed.gro
-#-----------------------------------------------
+# Files required: FtsZ-Dacomitinib_procssed.gro, topol.top
+#---------------------------------------------------------
 
 # Create the box of 1.2nm buffer & cubic shape
 # Generates 1 file: FtsZ-Dacomitinib_newbox.gro

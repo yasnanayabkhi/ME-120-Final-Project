@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#--------------------------------------------------------
+#---------------------------------------------------------------
 # Script for ionization of Dacomitinib-FtsZ complex
 # 3rd step of MD: ionization
-# Files required: ions.mdp, FtsZ-Dacomitinib_solv.gro
-#--------------------------------------------------------
+# Files required: ions.mdp, FtsZ-Dacomitinib_solv.gro, topol.top
+#---------------------------------------------------------------
 
 # To create atomic description of FtsZ-Dacomitinib system
 # Generates 1 file: ions.tpr 
