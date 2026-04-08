@@ -1,1 +1,19 @@
 #!/bin/bash
+
+#--------------------------------------------------------
+# Script to produced topology of Dacomitinib-FtsZ complex
+# 1st step of MD: Generate Topology
+#--------------------------------------------------------
+
+# Clean the PDB (removal of water)
+# Generates 3 files: topology file, position restraint file, post-procssed structure file
+grep -v HOH FtsZ-Dacomitinib.pdb > FtsZ-Dacomitinib_clean.pdb
+
+# Processed with tip3p water
+# Generates 1 file: processed
+# echo 1 to choose 1st choice for force field (charmm36)
+echo 1 | gmx pdb2gmx -f FtsZ-Dacomitinib_clean.pdb -o FtsZ-Dacomitinib_processed.gro -water tip3p
+
+# tell user generating topology is done 
+echo "Topology generation is completed.\n"
+echo "The files generated are FtsZ-Dacomitinib_clean.pdb and FtsZ-Dacomitinib_processed.gro"
