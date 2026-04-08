@@ -18,3 +18,7 @@ gmx mdrun -deffnm nvt
 # Generates 1 file: temperature.xvg
 # echo 16 0 to choose group 16 (temperature) then 0 to exit
 gmx energy -f nvt.edr -o temperature.xvg
+
+# tell user NVT equilibration is done 
+echo "NVT equilibration is completed.\n"
+echo "The file generated are nvt.tpr, nvt.log, nvt.edr, nvt.trr, nvt.gro, temperature.xvg"
