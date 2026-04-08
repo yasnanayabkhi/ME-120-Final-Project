@@ -14,3 +14,6 @@ gmx editconf -f FtsZ-Dacomitinib_processed.gro -o FtsZ-Dacomitinib_newbox.gro -c
 # Generates 1 file: FtsZ-Dacomitinib_solv.gro
 gmx solvate -cp FtsZ-Dacomitinib_newbox.gro -cs spc216.gro -o FtsZ-Dacomitinib_solv.gro -p topol.top
 
+# tell user define box & solvation is done 
+echo "defined box and solvation is completed.\n"
+echo "The files generated are FtsZ-Dacomitinib_newbox.gro and FtsZ-Dacomitinib_solv.gro"

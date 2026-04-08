@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #--------------------------------------------------------
-# Script to produce topology of Dacomitinib-FtsZ complex
-# 1st step of MD: Generate Topology
+# Script for generating topology of Dacomitinib-FtsZ
+# 1st step of MD: generate topology
 # Files required: FtsZ-Dacomitinib.pdb
 #--------------------------------------------------------
 
