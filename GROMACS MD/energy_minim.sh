@@ -2,7 +2,7 @@
 
 #-----------------------------------------------------------
 # Script for Energy Minimization of Dacomitinib-FtsZ system
-# 4rd step of MD: Energy Minimization
+# 4th step of MD: Energy Minimization
 # Files required: minim.mdp, FtsZ-Dacomitinib_solv_ions.gro
 #-----------------------------------------------------------
 
