@@ -42,6 +42,9 @@ List the main figures, tables, result files, or other outputs that staff should 
 
 ## Runtime Notes And Limitations
 
+Preparing PDBs: couple of seconds
+Molecular docking via Webina: 5 minutes to 2 hours (dependent on computer)
+GROMACS MD simulation:
 Note approximate runtime, special dependencies, hardware needs, and known limitations.
 
 ## Omitted Files, If Any
