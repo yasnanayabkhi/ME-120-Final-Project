@@ -19,6 +19,11 @@ gmx mdrun -deffnm nvt
 # echo 17 0 to choose group 17 (pressure) then 0 to exit
 gmx energy -f npt.edr -o pressure.xvg
 
+# To analyze the density progress during NPT steps
+# Generates 1 file: density.xvg
+# echo 23 0 to choose group 23 (density) then 0 to exit
+gmx energy -f npt.edr -o density.xvg
+
 # tell user NPT equilibration is done 
 echo "NPT equilibration is completed.\n"
-echo "The file generated are npt.tpr, npt.log, npt.edr, npt.trr, npt.gro, npt.cpt, temperature.xvg"
+echo "The file generated are npt.tpr, npt.log, npt.edr, npt.trr, npt.gro, npt.cpt, temperature.xvg, density.xvg"
