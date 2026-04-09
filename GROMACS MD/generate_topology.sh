@@ -8,7 +8,7 @@
 
 # Clean the PDB (removal of water)
 # Generates 3 files: topology file, position restraint file, post-procssed structure file
-grep -v HOH FtsZ-Dacomitinib.pdb > FtsZ-Dacomitinib_clean.pdb
+grep -v HOH FtsZ-Dacomitinib128.pdb > FtsZ-Dacomitinib_clean.pdb
 
 # Processed with tip3p water
 # Generates 1 file: processed
