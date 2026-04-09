@@ -15,6 +15,11 @@ grep -v HOH FtsZ-Dacomitinib128.pdb > FtsZ-Dacomitinib_clean.pdb
 # echo 1 to choose 1st choice for force field (charmm36)
 echo 1 | gmx pdb2gmx -f FtsZ-Dacomitinib_clean.pdb -o FtsZ-Dacomitinib_processed.gro -water tip3p
 
+# To fix ASN 25 residue 
+gmx pdb2gmx -f FtsZ-Dacomitinib_fixed.pdb -o FtsZ-Dacomitinib_processed.gro -water tip3p
+
+#
+
 # tell user generating topology is done 
 echo "Topology generation is completed.\n"
 echo "The files generated are FtsZ-Dacomitinib_clean.pdb and FtsZ-Dacomitinib_processed.gro"
