@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #--------------------------------------------------------
-# Script for generating topology of Dacomitinib-FtsZ
-# 1st step of MD: generate topology
-# Files required: FtsZ-Dacomitinib.pdb
+# Script for generating topology of FtsZ
+# 1st step of MD: generate FtsZ topology
+# Files required: FtsZ-Dacomitinib128.pdb
 #--------------------------------------------------------
 
 # To save seperate coordinates to isolate dacomitinib from complex 
