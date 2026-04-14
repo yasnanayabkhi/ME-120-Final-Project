@@ -16,7 +16,7 @@ pdbfixer FtsZ-Dacomitinib_clean.pdb --output=FtsZ-Dacomitinib_fixed.pdb --add-at
 # Processed with tip3p water
 # Generates 1 file: processed
 # echo 1 to choose 1st choice for force field (charmm36)
-echo 1 | gmx pdb2gmx -f FtsZ-Dacomitinib_fixed3.pdb -o FtsZ-Dacomitinib_processed.gro -water tip3p
+echo 1 | gmx pdb2gmx -f FtsZ-Dacomitinib_fixed.pdb -o FtsZ-Dacomitinib_processed.gro -water tip3p
 
 # tell user generating topology is done 
 echo "Topology generation is completed.\n"
