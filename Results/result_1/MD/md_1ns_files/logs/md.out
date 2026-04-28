@@ -1,0 +1,74 @@
+======================================
+Starting 1 ns Production MD
+Node: compute-12
+MPI ranks: 1
+Start time: Sat Apr 25 02:01:53 UTC 2026
+======================================
+Setting the LD random seed to -733283633
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_A'
+
+turning H bonds into constraints...
+
+Excluding 3 bonded neighbours molecule type 'Other_chain_A2'
+
+turning H bonds into constraints...
+
+Excluding 3 bonded neighbours molecule type 'LIG'
+
+turning H bonds into constraints...
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+turning H bonds into constraints...
+
+Excluding 3 bonded neighbours molecule type 'NA'
+
+turning H bonds into constraints...
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+J. S. Hub, B. L. de Groot, H. Grubmueller, G. Groenhof
+Quantifying Artifacts in Ewald Simulations of Inhomogeneous Systems with a Net
+Charge
+J. Chem. Theory Comput. 10 (2014) pp. 381-393
+-------- -------- --- Thank You --- -------- --------
+
+Analysing residue names:
+There are:   307    Protein residues
+There are:     2      Other residues
+There are: 23188      Water residues
+There are:    19        Ion residues
+Analysing Protein...
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+The largest distance between excluded atoms is 0.431 nm between atom 2432 and 2440
+
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 310 K
+
+Calculated rlist for 1x1 atom pair-list as 1.235 nm, buffer size 0.035 nm
+
+Set rlist, assuming 4x4 atom pair-list, to 1.200 nm, buffer size 0.000 nm
+
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+
+Reading Coordinates, Velocities and Box size from old trajectory
+
+Will read whole trajectory
+
+Using frame at t = 500 ps
+
+Starting time for run is 0 ps
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 60x60x60, spacing 0.150 0.150 0.150
+
+Estimate for the relative computational load of the PME mesh part: 0.10
+
+This run will generate roughly 42 Mb of data
+======================================
+1 ns MD production finished
+End time: Sat Apr 25 14:47:57 UTC 2026
+======================================
