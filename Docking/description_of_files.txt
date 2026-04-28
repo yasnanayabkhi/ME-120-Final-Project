@@ -6,8 +6,8 @@
  Required Files & Inputs
 ------------------------
 
-# Converted CIF format to 1C9.pdb using PyMOL
-- 1C9.pdb
+# Converted SDF format to 1C9_ideal.sdf using PyMOL
+- 1C9_ideal.sdf
 
 # Original 4DXD PDB of FtsZ to find box center for docking from rcsb.org
 - 4DXD.PDB
@@ -19,8 +19,8 @@
  Outputs
 ---------
 
-# Converted 1C9 PDB to PDBQT via Webina 
-- 1C9.converted.pdbqt
+# Converted 1C9 SDF to PDBQT via Webina 
+- 1C9_ideal.converted.pdbqt
 
 # Converted PDB to PDBQT via Webina 
 - 4DXD_clean_with_GDP.converted.pdbqt
