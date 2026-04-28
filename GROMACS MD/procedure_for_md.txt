@@ -302,6 +302,7 @@ https://cgenff.com
 7. SASA (burial of LIG)
     a. gmx sasa -s md.tpr -f md_fit.xtc -n index.ndx
         --> Choose LIG
+    b. rename area.xvg to sasa.xvg
 
 8. Protein Flexibility (RMSF)
     a. gmx rmsf -s md.tpr -f md_fit.xtc -n index.ndx -res 
