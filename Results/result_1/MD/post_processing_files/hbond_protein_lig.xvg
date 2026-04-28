@@ -1,0 +1,125 @@
+# This file was created Sat Apr 25 12:43:08 2026
+# Created by:
+#                :-) GROMACS - gmx hbond, 2026.0-conda_forge (-:
+# 
+# Executable:   /Applications/miniconda3/envs/md_core/bin.AVX2_256/gmx
+# Data prefix:  /Applications/miniconda3/envs/md_core
+# Working dir:  /Users/yasnanayabkhil/Desktop/NEW MD RUN
+# Command line:
+#   gmx hbond -s md.tpr -f md_fit.xtc -n index.ndx -r Protein -t LIG -num hbond_protein_lig.xvg
+# gmx hbond is part of G R O M A C S:
+#
+# GROningen MAchine for Chemical Simulation
+#
+@    title "Number of hydrogen bonds"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Hbonds"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Hydrogen bonds"
+      0.000          1
+     10.000          2
+     20.000          2
+     30.000          1
+     40.000          1
+     50.000          1
+     60.000          2
+     70.000          0
+     80.000          3
+     90.000          1
+    100.000          3
+    110.000          4
+    120.000          3
+    130.000          2
+    140.000          1
+    150.000          0
+    160.000          0
+    170.000          0
+    180.000          1
+    190.000          0
+    200.000          0
+    210.000          1
+    220.000          0
+    230.000          1
+    240.000          1
+    250.000          1
+    260.000          2
+    270.000          1
+    280.000          1
+    290.000          1
+    300.000          1
+    310.000          0
+    320.000          0
+    330.000          0
+    340.000          0
+    350.000          0
+    360.000          0
+    370.000          0
+    380.000          0
+    390.000          0
+    400.000          0
+    410.000          0
+    420.000          0
+    430.000          0
+    440.000          0
+    450.000          0
+    460.000          0
+    470.000          0
+    480.000          0
+    490.000          0
+    500.000          0
+    510.000          0
+    520.000          0
+    530.000          0
+    540.000          1
+    550.000          0
+    560.000          0
+    570.000          0
+    580.000          0
+    590.000          0
+    600.000          0
+    610.000          0
+    620.000          0
+    630.000          1
+    640.000          0
+    650.000          1
+    660.000          0
+    670.000          2
+    680.000          0
+    690.000          1
+    700.000          1
+    710.000          1
+    720.000          1
+    730.000          1
+    740.000          1
+    750.000          1
+    760.000          1
+    770.000          1
+    780.000          0
+    790.000          1
+    800.000          1
+    810.000          0
+    820.000          1
+    830.000          1
+    840.000          0
+    850.000          0
+    860.000          1
+    870.000          1
+    880.000          2
+    890.000          2
+    900.000          1
+    910.000          1
+    920.000          0
+    930.000          0
+    940.000          0
+    950.000          1
+    960.000          2
+    970.000          0
+    980.000          0
+    990.000          0
+   1000.000          0
