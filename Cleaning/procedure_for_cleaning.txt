@@ -6,26 +6,29 @@
 Website to obtain 1C9 (Dacomitinib): https://www.rcsb.org/ligand/1C9
 Website to obtain 4DXD (FtsZ with GDP/723): https://www.rcsb.org/structure/4DXD
 
-# Procedure to convert Dacomitinib from cif to pdb format:
+#-------------------------------------------------
+# Procedure to obtain 1C9 (Dacomitinib) ideal SDF:
+#-------------------------------------------------
 
-- Download Definition (CIF Format) of 1C9.
-- Load 1C9.cif into PyMOL
-- load /path/to/1C9.cif
-- Convert into a .pdb
-- save 1C9.pdb
-(Can be found in PDB, Docking Results, etc. Folder)
+- Download definition (SDF Format) of 1C9 from https://www.rcsb.org/ligand/1C9 
+- Store in a certain folder to be used in docking later on. 
+- Name: 1C9_ideal.sdf
 
+#---------------------------------------------------------------------------------------
 # Procedure to clean PDB 4DXD of S. Aureus by removal of inhibitor (723) to obtain FtsZ:
+#---------------------------------------------------------------------------------------
 
-(Notes: GDP turns into GTP (energy source) later on) 
-(When inhibitor binds to allosteric site --> prevents the filament formation which perform the function of bacterial cellular division help)
+Notes: GDP turns into GTP (energy source) later on 
+       When inhibitor binds to allosteric site --> prevents the filament formation which perform the function of bacterial cellular division 
 
 - Download 4DXD PDB from https://www.rcsb.org/structure/4DXD via legacy PDB format
 - Open PyMOL (download link: https://www.pymol.org/)
 - Goal: To remove inhibitor 723 (PC190723) and remove any other heteroatoms 
 - Perform next in terminal
 - load /path/to/4DXD.pdb 
-- In terminal, type: remove hetatm and not resn GDP (removes all heteroatoms such as water including 723 and leaves GDP)
-- In terminal, type: save 4DXD_clean_with_GDP.pdb (locate it into your storage) 
-(Can be found in PDB, Docking Results, etc. Folder)
+- In terminal, type: remove (hetatm and not resn GDP) 
+                --> removes all heteroatoms such as water including 723 and leaves GDP
+- In terminal, type: save 4DXD_clean_with_GDP.pdb 
+                --> locate it into your storage 
+- Store in a certain folder to be used in docking later on.
 
