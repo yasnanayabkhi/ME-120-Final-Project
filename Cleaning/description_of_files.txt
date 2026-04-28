@@ -6,11 +6,8 @@
  Required Files & Inputs
 ------------------------
 
-# Original Dacomitinib (1C9) CIF format from rcsb.org 
-- 1C9.cif
-
-# Converted CIF to 1C9.pdb using PyMOL
-- 1C9.pdb
+# Original Dacomitinib (1C9) SDF format from rcsb.org 
+- 1C9_ideal.sdf 
 
 ---------
  Outputs
