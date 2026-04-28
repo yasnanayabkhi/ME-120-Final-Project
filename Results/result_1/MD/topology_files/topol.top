@@ -1,0 +1,54 @@
+;
+;	File 'topol.top' was generated
+;	By user: yasnanayabkhil (501)
+;	On host: Yasnas-MacBook-Air.local
+;	At date: Mon Apr 20 09:49:37 2026
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	              :-) GROMACS - gmx pdb2gmx, 2026.0-conda_forge (-:
+;	
+;	Executable:   /Applications/miniconda3/envs/md_core/bin.AVX2_256/gmx
+;	Data prefix:  /Applications/miniconda3/envs/md_core
+;	Working dir:  /Users/yasnanayabkhil/Desktop/NEW MD RUN
+;	Command line:
+;	  gmx pdb2gmx -f protein_GDP_fixed.pdb -o FtsZ_processed.gro -p topol.top -water tip3p -ignh
+;	Force field was read from current directory or a relative path - path added.
+;
+
+; Include forcefield parameters
+#include "./charmm36-jul2022.ff/forcefield.itp"
+
+; Include ligand parameters
+#include "lig.prm"
+#include "lig.itp"
+
+; Include chain topologies
+#include "topol_Protein_chain_A.itp"
+#include "topol_Other_chain_A2.itp"
+
+; Include water topology
+#include "./charmm36-jul2022.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "./charmm36-jul2022.ff/ions.itp"
+
+[ system ]
+; Name
+Protein in water
+
+[ molecules ]
+; Compound        #mols
+Protein_chain_A     1
+Other_chain_A2      1
+LIG                 1
+SOL         23188
+NA               19
