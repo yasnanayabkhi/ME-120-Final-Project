@@ -43,7 +43,7 @@ https://cgenff.com
 
 1. conda activate md_core
 2. cd "your_folder" --> # note: replace the name with your folder name
-3. grep -E "ATOM|HETATM" FtsZ-Dacomitinib128.pdb | grep -v "LIG > grep protein_GDP.pdb
+3. grep -E "ATOM|HETATM" FtsZ-Dacomitinib128.pdb | grep -v "LIG" > grep protein_GDP.pdb
 4. grep "LIG" FtsZ-Dacomitinib128.pdb > LIG.pdb 
 5. grep -E "ATOM|HETATM" protein_GDP.pdb > tmp && mv tmp protein_GDP.pdb
 6. open protein_GDP.pdb in VSCode,
@@ -77,7 +77,7 @@ https://cgenff.com
 9. Move the folder into the your working folder
 10. Drag out unzipped folder the LIG.str and LIG.cgenff.mol2 into your folder
 11. Make sure you have the script cgenff_charmm2gmx_py3_nx2.py downloaded in your folder
-12. In terminal type: python3 cgenff_charmm3gmx_py3_nx2.py LIG LIG.cgenff.mol2 LIG.str charmm36-jul2022.ff
+12. In terminal type: python3 cgenff_charmm2gmx_py3_nx2.py LIG LIG.cgenff.mol2 LIG.str charmm36-jul2022.ff
     --> this produces lig.itp and lig.prm which is needed later
 
 #--------------------------------
@@ -88,7 +88,7 @@ https://cgenff.com
 2. Then command+f and type 60, remove any line that is related to the 60th atom
 3. In terminal: conda deactivate md_core, and conda activate obabel_env
 4. obabel LIG.cgenff.mol2 -o lig_h.pdb
-5. conda deactive obabel_env, then conda activate md_core
+5. conda deactivate obabel_env, then conda activate md_core
 6. gmx editconf -f lig_h.pdb -o lig_h.gro
 7. cat FtsZ_processed.pdb lig_h.pdb > complex_correct.pdb
 8. Open complex_correct.pdb in VSCode, remove everything line beside ATOM only records

@@ -1,2 +1,0 @@
-# Python requirements (include for which python we are using for .ipynb, should be the extension we are using )
-# For the post processing to make graphs (md_figures.ipynb)
