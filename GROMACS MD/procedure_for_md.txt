@@ -87,7 +87,7 @@ https://cgenff.com
 1. In VSCode, open lig.itp, remove virtual site line and everything below
 2. Then command+f and type 60, remove any line that is related to the 60th atom
 3. In terminal: conda deactivate md_core, and conda activate obabel_env
-4. obabel LIG.cgenff.mol2 -o lig_h.pdb
+4. obabel LIG.cgenff.mol2 -O lig_h.pdb
 5. conda deactivate obabel_env, then conda activate md_core
 6. gmx editconf -f lig_h.pdb -o lig_h.gro
 7. cat FtsZ_processed.pdb lig_h.pdb > complex_correct.pdb
