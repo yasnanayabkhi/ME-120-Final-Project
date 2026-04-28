@@ -30,3 +30,6 @@
 
 # txt file generated from docking 
 - stdout_128.txt 
+
+# Docked complex of FtsZ with Dacomitinib and GDP
+- FtsZ-Dacomitinib128.pdb
