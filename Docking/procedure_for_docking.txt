@@ -4,6 +4,7 @@
 
 Autodock Vina via Webina: https://durrantlab.pitt.edu/webina/
 4DXD PDB download link: https://www.rcsb.org/structure/4DXD
+PyMOL download link: https://www.pymol.org
 
 #----------------------------------------------------------------------------------------
 # Procedure to extract binding pocket box using PDB 4DXD via location of 723 binding site

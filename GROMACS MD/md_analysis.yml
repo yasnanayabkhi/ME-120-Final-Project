@@ -1,0 +1,9 @@
+name: md_analysis
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - matplotlib
+  - numpy
+  - seaborn
+  - scipy

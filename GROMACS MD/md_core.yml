@@ -1,0 +1,9 @@
+name: md_core
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - gromacs=2026
+  - pdbfixer
+  - networkx=2.8

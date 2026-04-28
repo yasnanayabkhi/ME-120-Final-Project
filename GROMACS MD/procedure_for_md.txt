@@ -2,5 +2,321 @@
 # Molecular Dynamics Procedure
 #-----------------------------
 
+# From this webiste: http://mackerell.umaryland.edu/charmm_ff.shtml#gromacs 
+    --> download charmm36-jul2022.ff.tgz 
+    --> unzip it manually or through terminal, type: tar -zxvf charmm36-jul2022.ff.tgz
+    --> save it as charmm36-jul2022.ff into your folder
 
-WRITE DEFINED PROCEDURE THEN ALSO WRITE SCRIPTS (.sh) FOR EACH STEP OF THE SIMULATION DONE for reproducibility 
+# This procedure is roughly based on http://www.mdtutorials.com/gmx/complex/index.html 
+
+# Make sure you have miniconda 3 downloaded
+- If you don't have it installed, follow procedure on this website: https://www.anaconda.com/docs/getting-started/miniconda/install/overview 
+
+# Download a text editor such as VSCode
+- https://code.visualstudio.com/download 
+
+# You will need 3 conda environments for this procedure
+Download obabel_env.yml, in terminal, type: conda env create -f obabel_env.yml
+Download md_core.yml, in terminal, type: conda env create -f md_core.yml
+Download md_analysis.yml, in terminal, type: conda env create -f md_analysis.yml 
+    --> then do: conda activate md_core
+
+# Download chimera for editing and conversion of pdbs
+- can download from here: https://www.cgl.ucsf.edu/chimera/download.html 
+
+# Make an CGenFF account on the website below
+https://cgenff.com 
+
+
+#----------------
+# PDB Preparation
+#----------------
+    
+- Make sure all UNL are changed to LIG in FtsZ-Dacomitinib128.pdb 
+    --> save the changes if so.
+
+#------------------
+# Seperation of PDB
+#------------------
+
+- Following is done in the terminal & text editor like VSCode
+
+1. conda activate md_core
+2. cd "your_folder" --> # note: replace the name with your folder name
+3. grep -E "ATOM|HETATM" FtsZ-Dacomitinib128.pdb | grep -v "LIG > grep protein_GDP.pdb
+4. grep "LIG" FtsZ-Dacomitinib128.pdb > LIG.pdb 
+5. grep -E "ATOM|HETATM" protein_GDP.pdb > tmp && mv tmp protein_GDP.pdb
+6. open protein_GDP.pdb in VSCode,
+    --> in the beginning add: CRYST1   67.715   54.650   84.496  90.00 106.75  90.00 C 1 2 1       1
+    --> Between the molecules, make a new line and put an TER
+    --> at the end: type END
+7. save the edited protein_GDP.pdb
+8. pdbfixer protein_GDP.pdb --add-atoms=all --output=protein_GDP_fixed.pdb 
+
+#----------------------------
+# Protein & GDP only topology
+#----------------------------
+
+- Following is done in the terminal & text editor like VSCode
+
+1. gmx pdb2gmx -f protein_GDP_fixed.pdb -o FtsZ_processed.gro -p topol.top -water tip3p -ignh 
+    --> select 1, this chooses the charmm36 force field for the topology
+
+#------------------------
+# Creating Ligand Toplogy
+#------------------------
+
+1. open LIG.pdb in Chimera
+2. Go to Tools --> Structure Editing --> AddH
+3. Go to File --> Save Mol2
+4. Save the file name as LIG.mol2
+5. Open LIG.mol2 in VSCode, change the naming from LIG.pdb to LIG and save
+6. Go to https://cgenff.com, log in, start CGenFF Job
+7. Run CGenFF, upload the LIG.mol2, use version 5.0, put the job name as LIG
+8. Run CGenFF engine, then download CGenFF Results, unzip the download
+9. Move the folder into the your working folder
+10. Drag out unzipped folder the LIG.str and LIG.cgenff.mol2 into your folder
+11. Make sure you have the script cgenff_charmm2gmx_py3_nx2.py downloaded in your folder
+12. In terminal type: python3 cgenff_charmm3gmx_py3_nx2.py LIG LIG.cgenff.mol2 LIG.str charmm36-jul2022.ff
+    --> this produces lig.itp and lig.prm which is needed later
+
+#--------------------------------
+# Prepare Ligand Coordinate Files
+#--------------------------------
+
+1. In VSCode, open lig.itp, remove virtual site line and everything below
+2. Then command+f and type 60, remove any line that is related to the 60th atom
+3. In terminal: conda deactivate md_core, and conda activate obabel_env
+4. obabel LIG.cgenff.mol2 -o lig_h.pdb
+5. conda deactive obabel_env, then conda activate md_core
+6. gmx editconf -f lig_h.pdb -o lig_h.gro
+7. cat FtsZ_processed.pdb lig_h.pdb > complex_correct.pdb
+8. Open complex_correct.pdb in VSCode, remove everything line beside ATOM only records
+    --> no TER, END, MODEL, ENDMDL, MASTER, TITLE, REMARK, CRYST1, SEQRES, or CONECT records
+9. Save the changes
+10. In terminal: gmx editconf -f complex_correct.pdb -o complex_correct.gro
+
+#----------------------
+# Define Simulation Box
+#----------------------
+
+1. In terminal: gmx editconf -f complex_correct.gro -o complex_box.gro -bt cubic -d 1.0
+    --> this creates simulation box w/ minimum distance of 1.0 nm b/w protein complex & box edge
+
+#----------------------
+# Create Clean Topology
+#----------------------
+
+1. Open topol.top in VSCode, make the following file this layout:
+    ; Include forcefield parameters
+    #include "./charmm36-jul2022.ff/forcefield.itp"
+
+    ; Include ligand parameters
+    #include "lig.prm"
+    #include "lig.itp"
+
+    ; Include chain topologies
+    #include "topol_Protein_chain_A.itp"
+    #include "topol_Other_chain_A2.itp"
+
+    ; Include water topology
+    #include "./charmm36-jul2022.ff/tip3p.itp"
+
+    #ifdef POSRES_WATER
+    ; Position restraint for each water oxygen
+    [ position_restraints ]
+    ;  i funct       fcx        fcy        fcz
+       1    1       1000       1000       1000
+    #endif
+
+    ; Include topology for ions
+    #include "./charmm36-jul2022.ff/ions.itp"
+
+    [ system ]
+    ; Name
+    Protein in water
+
+    [ molecules ]
+    ; Compound        #mols
+    Protein_chain_A     1
+    Other_chain_A2      1
+    LIG                 1
+
+2. Save the edited topol.top
+
+#-------------------
+# Solvate the System
+#-------------------
+
+1. gmx solvate -cp complex_box.gro -cs spc216.gro -o solv.gro -p topol.top 
+    --> this adds tip3p to the box
+
+
+#----------------------------------
+# Fix Missing Parameters in lig.prm
+#----------------------------------
+
+1. We have to fix the missing parameters in lig.prm because of improper CGenFF conversion
+2. Open lig.prm in VSCode, (make sure all indents line up)
+    --> In the bondtypes section: add 
+        CG2DC1    CG324     1   0.150800   376560.00
+    --> In the angletypes section: add
+        CG2R64    NG311   CG2R61     5   117.000000   418.400000   0.00000000         0.00
+        CG2DC1   CG2DC1    CG324     5   123.500000   418.400000   0.00000000         0.00
+        CG324    CG2DC1     HGA4    5    116.000000   293.080000   0.00000000         0.00
+        CG2DC1    CG324     HGA2     5   109.500000   293.080000   0.00000000         0.00
+    --> In the diherdraltypes section: add
+        CG2R61    NG311   CG2R64   NG2R62     9   180.000000    10.041600     2
+        CG2R61    NG311   CG2R64   CG2R61     9   180.000000    10.041600     2
+        CG2R64    NG311   CG2R61   CG2R61     9   180.000000    10.041600     2
+        CG2R66   CG2R61   CG2R61    HGR62     9   180.000000    10.041600     2
+          HGA4   CG2DC1   CG2DC1    CG324     9   180.000000    19.413760     2
+          HGA4   CG2DC1   CG2DC1    CG324     9     0.000000     1.631760     3
+
+#----------------
+# Ionization Step
+#----------------
+
+1. Make sure you have the ions.mdp downloaded
+2. gmx grompp -f ions.mdp -c solv.gro -p topol.top -o ions.tpr -r solv.gro
+3. gmx genion -s ions.tpr -o solv_ions.gro -pname NA -nname CL -neutral
+    --> select SOL
+4. This replaces some water molecules with ions due to charges in the system
+
+#-------------------------
+# Eneegy Minimization Step
+#-------------------------
+
+1. Make sure you have the em.mdp downloaded
+2. gmx grompp -f em.mdp -c solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+3. gmx mdrun -v deffnm em
+4. Optional: gmx energy -f em.edr -o potential.xvg 
+    --> select 11(potential), then 0 (to terminal input)
+
+#-------------------
+# Restraining Ligand
+#-------------------
+
+1. gmx make_ndx -f lig_h.gro -o index_lig.make_ndx
+    --> type 2& ! a H*
+    --> type q
+
+2. gmx genrestr -f lig_h.gro -n index_lig.ndx -o posre_lig.itp -fc 1000 1000 1000
+    --> generate posre_lig.itp 
+
+3. Open lig.itp in VSCode, add these lines to the bottom of file
+    ; Ligand position restraints
+    #ifdef POSRES_LIG
+    #include "posre_lig.itp"
+    #endif
+
+#-------------------------
+# Equilibration Step - NVT
+#-------------------------
+
+1. Make sure you have nvt.mdp downloaded
+2. In lig.top, have the following: add under the lig.itp 
+    #include "charmm36-jul2022.ff/forcefield.itp"
+    ; additional params for the molecule
+    #include "lig.prm"
+    #include "lig.itp"
+
+    ; Ligand position restraints
+    #ifdef POSRES_LIG
+    #include "posre_lig.itp"
+    #endif
+
+3. gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr -maxwarn 1
+4. gmx mdrun -deffnm nvt
+5. Optional: gmx energy -f nvt.edr -o temperature.xvg
+    --> type 16 (temperature) and 0 (to terminate input)
+
+#-------------------------
+# Equilibration Step - NPT
+#-------------------------
+
+1. Make sure you have npt.mdp downloaded
+2. gmx grompp -f npt.mdp -c nvt.gro -t nvt.cpt -r nvt.gro -p topol.top -o npt.tpr -maxwarn 1
+3. gmx mdrun -deffnm npt
+4. Optional: gmx energy -f npt.edr -o pressure.xvg
+    --> type 17 (pressure) and 0 (to terminate input)
+5. Optional: gmx energy -f npt.edr -o density.xvg
+    --> type 23 (density) and 0 (to terminate input)
+
+#--------------
+# MD Production
+#--------------
+
+1. Make sure you have md.mdp downloaded, 1ns run
+2. gmx grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md.tpr -maxwarn 1
+3. gmx mdrun -deffnm md
+
+#-----------------------
+# Fixing Trajectory File
+#-----------------------
+
+1. gmx trjconv -s md.tpr -f md.xtc -o md_center.xtc -center -pbc mol -ur compact
+    --> Choose Protein then System
+2. gmx trjconv -s md.tpr -f md_center.xtc -o final_frame.pdb -dump 1
+    --> Choose System
+    --> can visualize in PyMOL
+3. gmx trjconv -s md.tpr -f md_center.xtc -o md_fit.xtc -fit rot+trans
+    --> Choose Backbone then System
+
+#---------------------------
+# Post-Processing of Complex
+#---------------------------
+
+1. To make index of LIG heavy atoms
+    gmx make_ndx -f md.tpr -o index.ndx
+    >> r LIG & ! a H*
+    >> name 21 LIG_heavy
+    >> q
+
+2. Protein-Ligand RMSD
+   a. protein backbone stability (overall stability)
+      gmx rms -s md.tpr -f md_fit.xtc -n index.ndx -o rmsd_FtsZ.xvg
+        --> Choose for fit - Protein then Protein
+   b. ligand binding stability
+      gmx rms -s md.tpr -f md_fit.xtc -n index.ndx -o rmsd_LIG.xvg
+        --> Choose for fit - Protein then LIG_heavy
+
+3. Protein-Ligand Interaction energy
+    - Make sure you download ie.mdp 
+    a. gmx grompp -f ie.mdp -c npt.gro -t npt.cpt -p topol.top -n index.ndx -o ie.tpr -maxwarn 1
+    b. gmx mdrun -deffnm ie -rerun md.xtc -nb cpu
+    c. gmx energy -f ie.edr -o interaction_energy.xvg
+        --> Choose Coul-SR:Protein-LIG (21) and LJ-SR:Protein-LIG (22) then type 0 then enter
+
+4. Hydrogen Bonds
+    a. gmx hbond -s md.tpr -f md_fit.xtc -n index.ndx -r Protein -t LIG -num hbond_protein_lig.xvg
+
+5. Radius of Gyration
+    a. gmx gyrate -s md.tpr -f md_fit.xtc -o gyrate.xvg
+        --> Choose Protein
+
+6. Contacts / Packing (contact strength over time)
+    a. gmx mindist -s md.tpr -f md_fit.xtc -n index.ndx 
+        --> Choose LIG
+    
+7. SASA (burial of LIG)
+    a. gmx sasa -s md.tpr -f md_fit.xtc -n index.ndx
+        --> Choose LIG
+
+8. Protein Flexibility (RMSF)
+    a. gmx rmsf -s md.tpr -f md_fit.xtc -n index.ndx -res 
+        --> Choose Protein
+
+9. Cluster Analysis (to check stable poses of the LIG)
+    a. gmx cluster -s md.tpr -f md_fit.xtc -n index.ndx
+        --> Choose LIG_heavy
+
+10. Center of Mass distance b/w ligand & protein
+    a. gmx distance -s md.tpr -f md_fit.xtc -n index.ndx -select 
+        > com of group LIG plus com of group Protein
+        --> Ctrl + d to exit
+
+11. conda activate md_analysis
+12. Make sure you have downloaded the plot.py
+13. In terminal, type: python plot.py
+14. Figures will be in a folder called Figures

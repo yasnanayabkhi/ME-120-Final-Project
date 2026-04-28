@@ -1,0 +1,7 @@
+name: obabel_env
+channels:
+  - defaults
+dependencies:
+  - openbabel
+  - python=3.10
+
