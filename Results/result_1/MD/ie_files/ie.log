@@ -1,0 +1,1864 @@
+                :-) GROMACS - gmx mdrun, 2026.0-conda_forge (-:
+
+Copyright 1991-2026 The GROMACS Authors.
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+                         Current GROMACS contributors:
+       Mark Abraham           Andrey Alekseenko           Brian Andrews       
+        Paul Bauer              Cathrine Bergh              Hugh Bird         
+      Eliane Briand               Ania Brown                Yiqi Chen         
+      Mahesh Doijade            Giacomo Fiorin          Stefan Fleischmann    
+      Sergey Gorelov         Gilles Gouaillardet            Alan Gray         
+   Farzaneh Jalalypour         Petter Johansson          Carsten Kutzner      
+    Grzegorz Łazarski         Justin A. Lemkul          Magnus Lundborg      
+        Julio Maia               Pascal Merz             Vedran Miletić      
+      Dmitry Morozov           Lukas Müllender           Szilárd Páll      
+ Andrea Pasquadibisceglie     Michele Pellegrino         Nicola Piasentin     
+     Daniele Rapetti         Muhammad Umair Sadiq         Hubert Santuz       
+      Michael Shirts           Tatiana Shugaeva          Alexey Shvetsov      
+     Bálint Soproni            Philip Turner            Alessandra Villa     
+        Yang Zhang        
+
+                         Previous GROMACS contributors:
+        Emile Apol             Rossen Apostolov           James Barnett       
+      Vladimir Basov        Herman J.C. Berendsen          Par Bjelkmar       
+      Christian Blau          Viacheslav Bolnykh            Kevin Boyd        
+    Aldert van Buuren          Carlo Camilloni           Rudi van Drunen      
+      Anton Feenstra           Oliver Fleetwood            Vytas Gapsys       
+       Gaurav Garg             Gerrit Groenhof            Bert de Groot       
+      Anca Hamuraru           Vincent Hindriksen          Victor Holanda      
+     M. Eric Irrgang           Aleksei Iupinov              Joe Jordan        
+    Christoph Junghans        Prashanth Kanduri        Dimitrios Karkoulis    
+       Peter Kasson             Sebastian Kehl           Sebastian Keller     
+        Jiri Kraus               Per Larsson              Viveca Lindahl      
+      Erik Marklund           Pieter Meulenhoff           Teemu Murtola       
+       Julien Nabet              Sander Pronk             Roland Schulz       
+      Alfons Sijbers         David van der Spoel          Peter Tieleman      
+      Carsten Uphoff             Jon Vincent             Teemu Virolainen     
+    Christian Wennberg     Sebastian Wingbermühle         Maarten Wolf       
+      Artem Zhmurov       
+
+                  Coordinated by the GROMACS project leaders:
+                           Berk Hess and Erik Lindahl
+
+GROMACS:      gmx mdrun, version 2026.0-conda_forge
+Executable:   /Applications/miniconda3/envs/md_core/bin.AVX2_256/gmx
+Data prefix:  /Applications/miniconda3/envs/md_core
+Working dir:  /Users/yasnanayabkhil/Desktop/NEW MD RUN
+Process ID:   29492
+Command line:
+  gmx mdrun -deffnm ie -rerun md.xtc -nb cpu
+
+GROMACS version:     2026.0-conda_forge
+Precision:           mixed
+Memory model:        64 bit
+MPI library:         thread_mpi
+MPI version:         built in
+OpenMP support:      enabled (GMX_OPENMP_MAX_THREADS = 128)
+GPU support:         disabled
+SIMD instructions:   AVX2_256
+CPU FFT library:     fftw-3.3.10-sse2-avx
+GPU FFT library:     none
+Multi-GPU FFT:       none
+RDTSCP:              disabled
+TNG support:         enabled
+Hwloc support:       disabled
+Tracing support:     disabled
+Colvars support:     enabled (version 2025-10-13)
+CP2K support:        disabled
+Torch support:       disabled
+Plumed support:      enabled
+C compiler:          /Users/runner/miniforge3/conda-bld/gromacs_1770909806079/_build_env/bin/x86_64-apple-darwin13.4.0-clang Clang 19.1.7
+C compiler flags:    -mavx2 -mfma -Wno-missing-field-initializers -O3 -DNDEBUG
+C++ compiler:        /Users/runner/miniforge3/conda-bld/gromacs_1770909806079/_build_env/bin/x86_64-apple-darwin13.4.0-clang++ Clang 19.1.7
+C++ compiler flags:  -mavx2 -mfma -Wno-reserved-identifier -Wno-missing-field-initializers -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-source-uses-openmp -Wno-c++17-extensions -Wno-documentation-unknown-command -Wno-covered-switch-default -Wno-switch-enum -Wno-switch-default -Wno-extra-semi-stmt -Wno-weak-vtables -Wno-shadow -Wno-padded -Wno-reserved-id-macro -Wno-double-promotion -Wno-exit-time-destructors -Wno-global-constructors -Wno-documentation -Wno-format-nonliteral -Wno-used-but-marked-unused -Wno-float-equal -Wno-conditional-uninitialized -Wno-conversion -Wno-disabled-macro-expansion -Wno-unused-macros -Wno-unsafe-buffer-usage -Wno-cast-function-type-strict SHELL:-fopenmp=libomp -O3 -DNDEBUG
+BLAS library:        External - detected on the system
+LAPACK library:      External - detected on the system
+
+
+Running on 1 node with total 0 processing units
+Hardware detected on host Yasnas-MacBook-Air.local:
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Core(TM) i3-1000NG4 CPU @ 1.10GHz
+    Family: 6   Model: 126   Stepping: 5
+    Features: aes apic avx avx2 avx512f avx512cd avx512bw avx512vl clfsh cmov cx8 cx16 f16c fma htt intel lahf mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sha sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+    Number of AVX-512 FMA units: 1 (For Intel, AVX2 is faster w/o 2 AVX-512 FMA units)
+  Hardware topology: Only logical processor count
+    CPU limit set by OS: -1   Recommended max number of threads: 4
+
+The current CPU can measure timings more accurately than the code in
+gmx mdrun was configured to use. This might affect your simulation
+speed as accurate timings are needed for load-balancing.
+Please consider rebuilding gmx mdrun with the GMX_USE_RDTSCP=ON CMake option.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. J. Abraham, T. Murtola, R. Schulz, S. Páll, J. C. Smith, B. Hess, E.
+Lindahl
+GROMACS: High performance molecular simulations through multi-level
+parallelism from laptops to supercomputers
+SoftwareX (2015)
+https://doi.org/10.1016/j.softx.2015.06.001
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Páll, M. J. Abraham, C. Kutzner, B. Hess, E. Lindahl
+Tackling Exascale Software Challenges in Molecular Dynamics Simulations with
+GROMACS
+In S. Markidis & E. Laure (Eds.), Solving Software Challenges for Exascale (2015)
+https://doi.org/10.1007/978-3-319-15976-8_1
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Pronk, S. Páll, R. Schulz, P. Larsson, P. Bjelkmar, R. Apostolov, M. R.
+Shirts, J. C. Smith, P. M. Kasson, D. van der Spoel, B. Hess, E. Lindahl
+GROMACS 4.5: a high-throughput and highly parallel open source molecular
+simulation toolkit
+Bioinformatics (2013)
+https://doi.org/10.1093/bioinformatics/btt055
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess, C. Kutzner, D. van der Spoel, E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. (2008)
+https://doi.org/10.1021/ct700301q
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark, H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. (2005)
+https://doi.org/10.1002/jcc.20291
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl, B. Hess, D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. (2001)
+https://doi.org/10.1007/s008940100045
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. (1995)
+https://doi.org/10.1016/0010-4655(95)00042-E
+-------- -------- --- Thank You --- -------- --------
+
+Input Parameters:
+   integrator                     = md
+   tinit                          = 0
+   dt                             = 0.002
+   nsteps                         = 500000
+   init-step                      = 0
+   simulation-part                = 1
+   mts                            = false
+   mass-repartition-factor        = 1
+   comm-mode                      = Linear
+   nstcomm                        = 100
+   bd-fric                        = 0
+   ld-seed                        = -58726018
+   emtol                          = 10
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 0
+   nstvout                        = 0
+   nstfout                        = 0
+   nstlog                         = 5000
+   nstcalcenergy                  = 100
+   nstenergy                      = 5000
+   nstxout-compressed             = 5000
+   compressed-x-precision         = 1000
+   cutoff-scheme                  = Verlet
+   nstlist                        = 10
+   pbc                            = xyz
+   periodic-molecules             = false
+   verlet-buffer-tolerance        = 0.005
+   verlet-buffer-pressure-tolerance = 0.5
+   rlist                          = 1.2
+   coulombtype                    = PME
+   coulomb-modifier               = Potential-shift
+   rcoulomb-switch                = 0
+   rcoulomb                       = 1.2
+   epsilon-r                      = 1
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = Force-switch
+   rvdw-switch                    = 1
+   rvdw                           = 1.2
+   DispCorr                       = No
+   table-extension                = 1
+   fourierspacing                 = 0.16
+   fourier-nx                     = 60
+   fourier-ny                     = 60
+   fourier-nz                     = 60
+   pme-order                      = 4
+   ewald-rtol                     = 1e-05
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 3d
+   epsilon-surface                = 0
+   ensemble-temperature-setting   = constant
+   ensemble-temperature           = 310
+   tcoupl                         = V-rescale
+   nsttcouple                     = 100
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = false
+   pcoupl                         = C-rescale
+   pcoupltype                     = Isotropic
+   nstpcouple                     = 100
+   tau-p                          = 5
+   compressibility (3x3):
+      compressibility[    0]={ 4.50000e-05,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  4.50000e-05,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  4.50000e-05}
+   ref-p (3x3):
+      ref-p[    0]={ 1.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  1.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  1.00000e+00}
+   refcoord-scaling               = No
+   posres-com: not available
+   posres-comB: not available
+   QMMM                           = false
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = true
+   Shake-SOR                      = false
+   shake-tol                      = 0.0001
+   lincs-order                    = 4
+   lincs-iter                     = 1
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = false
+   awh                            = false
+   rotation                       = false
+   interactiveMD                  = false
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = false
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = no
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = false
+   swapcoords                     = no
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+   applied-forces:
+     electric-field:
+       x:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       y:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       z:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+     density-guided-simulation:
+       active                     = false
+       group                      = protein
+       similarity-measure         = inner-product
+       atom-spreading-weight      = unity
+       force-constant             = 1e+09
+       gaussian-transform-spreading-width = 0.2
+       gaussian-transform-spreading-range-in-multiples-of-width = 4
+       reference-density-filename = reference.mrc
+       nst                        = 1
+       normalize-densities        = true
+       adaptive-force-scaling     = false
+       adaptive-force-scaling-time-constant = 4
+       shift-vector               = 
+       transformation-matrix      = 
+     qmmm-cp2k:
+       active                     = false
+       qmgroup                    = System
+       qmmethod                   = PBE
+       qmfilenames                = 
+       qmcharge                   = 0
+       qmmultiplicity             = 1
+     colvars:
+       active                     = false
+       configfile                 = 
+       seed                       = -1
+     nnpot:
+       active                     = false
+       modelfile                  = model.pt
+       input-group                = System
+       link-type                  = H
+       link-distance              = 0.1
+       pair-cutoff                = 0
+       embedding                  = mechanical
+       nnp-charge                 = 0
+       model-input1               = 
+       model-input2               = 
+       model-input3               = 
+       model-input4               = 
+       model-input5               = 
+       model-input6               = 
+       model-input7               = 
+       model-input8               = 
+       model-input9               = 
+   fast-multipole-method:
+     fmm:
+       backend                    = inactive
+       exafmm-order               = 6
+       exafmm-direct-range        = 2
+       exafmm-direct-provider     = GROMACS
+       exafmm-tree-type           = uniform
+       exafmm-tree-depth          = 0
+       exafmm-max-particles-per-cell = 0
+       fmsolvr-order              = 8
+       fmsolvr-direct-range       = 1
+       fmsolvr-direct-provider    = FMM
+       fmsolvr-dipole-compensation = true
+       fmsolvr-tree-depth         = 3
+       fmsolvr-sparse             = false
+grpopts:
+   nrdf:      150582
+   ref-t:         310
+   tau-t:           1
+annealing:          No
+annealing-npoints:           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0 0 0
+   energygrp-flags[  1]: 0 0 0
+   energygrp-flags[  2]: 0 0 0
+
+
+Rerun trajectory contains velocities. Rerun does only evaluate potential energy and forces. The velocities will be ignored.
+Changing nstlist from 10 to 80, rlist from 1.2 to 1.324
+
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Initializing Domain Decomposition on 1 ranks
+NOTE: disabling dynamic load balancing as it is not supported in reruns.
+Dynamic load balancing: off
+Minimum cell size due to atom displacement: 0.645 nm
+Initial maximum distances in bonded interactions:
+    two-body bonded interactions: 0.431 nm, LJ-14, atoms 2432 2440
+  multi-body bonded interactions: 0.498 nm, CMAP Dih., atoms 4372 4388
+Minimum cell size due to bonded interactions: 0.548 nm
+Maximum distance for 5 constraints, at 120 deg. angles, all-trans: 0.222 nm
+Estimated maximum distance required for P-LINCS: 0.222 nm
+Using 0 separate PME ranks because: there are too few total ranks for efficient splitting
+Optimizing the DD grid for 1 cells with a minimum initial size of 0.645 nm
+The maximum allowed number of cells is: X 13 Y 13 Z 13
+Domain decomposition grid 1 x 1 x 1, separate PME ranks 0
+PME domain decomposition: 1 x 1 x 1
+
+The initial number of communication pulses is:
+The initial domain decomposition cell size is:
+
+The maximum allowed distance for atoms involved in interactions is:
+                 non-bonded interactions           1.324 nm
+(the following are initial values, they could change due to box deformation)
+            two-body bonded interactions  (-rdd)   1.324 nm
+          multi-body bonded interactions  (-rdd)   1.324 nm
+  atoms separated by up to 5 constraints  (-rcon)  9.021 nm
+
+Local state does not use filler particles
+
+Using 1 MPI thread
+Using 4 OpenMP threads 
+
+System total charge: -0.050
+Will do PME sum in reciprocal space for electrostatic interactions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee, L. G. Pedersen 
+A smooth particle mesh Ewald method
+J. Chem. Phys. (1995)
+https://doi.org/10.1063/1.470117
+-------- -------- --- Thank You --- -------- --------
+
+Using a Gaussian width (1/beta) of 0.384195 nm for Ewald
+Potential shift: LJ r^-12: -2.648e-01 r^-6: -5.349e-01, Ewald -8.333e-06
+Initialized non-bonded Coulomb Ewald tables, spacing: 1.02e-03 size: 1176
+
+Generated table with 1162 data points for 1-4 COUL.
+Tabscale = 500 points/nm
+Generated table with 1162 data points for 1-4 LJ6.
+Tabscale = 500 points/nm
+Generated table with 1162 data points for 1-4 LJ12.
+Tabscale = 500 points/nm
+
+
+Using SIMD4xM 4x8 nonbonded short-range kernels
+
+Using a dual 4x8 pair-list setup updated with dynamic pruning:
+  outer list: updated every 80 steps, buffer 0.124 nm, rlist 1.324 nm
+  inner list: updated every 12 steps, buffer 0.000 nm, rlist 1.200 nm
+At tolerance 0.005 kJ/mol/ps per atom, equivalent classical 1x1 list would be:
+  outer list: updated every 80 steps, buffer 0.268 nm, rlist 1.468 nm
+  inner list: updated every 12 steps, buffer 0.047 nm, rlist 1.247 nm
+
+The average pressure is off by at most 0.19 bar due to missing LJ interactions
+
+Linking all bonded interactions to atoms
+
+
+Initializing Parallel LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess
+P-LINCS: A Parallel Linear Constraint Solver for molecular simulation
+J. Chem. Theory Comput. (2008)
+https://doi.org/10.1021/ct700200b
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 2280
+There are constraints between atoms in different decomposition domains,
+will communicate selected coordinates each lincs iteration
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Miyamoto, P. A. Kollman
+SETTLE: An Analytical Version of the SHAKE and RATTLE Algorithms for Rigid
+Water Models
+J. Comp. Chem. (1992)
+https://doi.org/10.1002/jcc.540130805
+-------- -------- --- Thank You --- -------- --------
+
+
+Note that it is planned that the command gmx mdrun -rerun will be available in a different form in a future version of GROMACS, e.g. gmx rerun -f.
+There are: 74143 Atoms
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+
+Started mdrun on rank 0 Sat Apr 25 12:41:51 2026
+
+
+Simulations has constraints. Rerun does not recalculate constraints.
+
+Rerun does not report kinetic energy, total energy, temperature, virial and pressure.
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+              0        0.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.95018e+03    1.07399e+04    1.13932e+04    7.21338e+02   -6.36900e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.94411e+03    6.08788e+04    9.33582e+04   -1.15864e+06    3.66458e+03
+      Potential
+   -9.71626e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+           5000       10.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.62888e+03    1.10794e+04    1.12618e+04    7.33448e+02   -7.00786e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.97752e+03    6.08640e+04    9.41302e+04   -1.15762e+06    3.55971e+03
+      Potential
+   -9.70088e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          10000       20.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.71350e+03    1.09308e+04    1.14094e+04    7.04591e+02   -6.87934e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.08146e+03    6.11132e+04    9.39212e+04   -1.15697e+06    3.51337e+03
+      Potential
+   -9.69274e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          15000       30.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.99087e+03    1.11390e+04    1.12531e+04    7.64462e+02   -6.97250e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.04572e+03    6.06523e+04    9.32811e+04   -1.15753e+06    3.56349e+03
+      Potential
+   -9.70538e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          20000       40.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.06077e+03    1.10108e+04    1.13709e+04    7.47772e+02   -7.39632e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.03819e+03    6.12201e+04    9.27319e+04   -1.15679e+06    3.58739e+03
+      Potential
+   -9.69757e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          25000       50.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.76079e+03    1.10516e+04    1.14060e+04    7.42157e+02   -6.84063e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.01511e+03    6.09971e+04    9.39017e+04   -1.15757e+06    3.58049e+03
+      Potential
+   -9.69796e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          30000       60.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.65421e+03    1.10181e+04    1.12395e+04    7.27807e+02   -5.79635e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.98742e+03    6.11823e+04    9.31729e+04   -1.15741e+06    3.63233e+03
+      Potential
+   -9.70374e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          35000       70.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.83819e+03    1.09108e+04    1.13383e+04    7.17694e+02   -6.45816e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.05537e+03    6.11632e+04    9.48009e+04   -1.15885e+06    3.54408e+03
+      Potential
+   -9.70128e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          40000       80.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.72163e+03    1.09962e+04    1.12732e+04    7.23416e+02   -7.02450e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.98232e+03    6.06621e+04    9.25947e+04   -1.15858e+06    3.63005e+03
+      Potential
+   -9.72704e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          45000       90.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.83034e+03    1.07373e+04    1.12317e+04    6.35201e+02   -6.46818e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.04141e+03    6.11433e+04    9.35842e+04   -1.15946e+06    3.48701e+03
+      Potential
+   -9.72416e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          50000      100.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.02487e+03    1.09502e+04    1.13347e+04    7.34608e+02   -6.74987e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.08795e+03    6.11129e+04    9.23227e+04   -1.15643e+06    3.49007e+03
+      Potential
+   -9.70043e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          55000      110.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.02104e+03    1.09998e+04    1.11471e+04    7.11806e+02   -6.92324e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.96388e+03    6.07112e+04    9.39558e+04   -1.15805e+06    3.52724e+03
+      Potential
+   -9.70700e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          60000      120.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.68311e+03    1.11761e+04    1.13618e+04    7.32903e+02   -7.33961e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.05505e+03    6.10473e+04    9.32162e+04   -1.15673e+06    3.57627e+03
+      Potential
+   -9.69613e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          65000      130.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.94256e+03    1.09586e+04    1.13774e+04    7.25913e+02   -6.87134e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.09070e+03    6.11316e+04    9.25213e+04   -1.15669e+06    3.50485e+03
+      Potential
+   -9.70126e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          70000      140.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.78621e+03    1.09844e+04    1.11550e+04    6.55094e+02   -6.53667e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.00605e+03    6.13065e+04    9.00840e+04   -1.15359e+06    3.51228e+03
+      Potential
+   -9.69758e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          75000      150.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.80595e+03    1.12478e+04    1.12676e+04    6.81812e+02   -7.23309e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.00622e+03    6.11905e+04    9.29172e+04   -1.15832e+06    3.41319e+03
+      Potential
+   -9.71514e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          80000      160.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.04264e+03    1.11324e+04    1.12298e+04    7.11957e+02   -7.30271e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.03916e+03    6.09380e+04    9.31103e+04   -1.15559e+06    3.54407e+03
+      Potential
+   -9.68568e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          85000      170.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.96291e+03    1.10510e+04    1.12850e+04    7.34930e+02   -8.27202e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.01304e+03    6.10132e+04    9.30664e+04   -1.15636e+06    3.57449e+03
+      Potential
+   -9.69488e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          90000      180.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.86762e+03    1.09180e+04    1.12802e+04    7.37042e+02   -7.04250e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.94171e+03    6.10030e+04    9.14071e+04   -1.15439e+06    3.51929e+03
+      Potential
+   -9.69424e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+          95000      190.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.87354e+03    1.12518e+04    1.12497e+04    7.35901e+02   -7.11504e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.03385e+03    6.10061e+04    9.24059e+04   -1.15604e+06    3.59307e+03
+      Potential
+   -9.69598e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         100000      200.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.97414e+03    1.09521e+04    1.14560e+04    6.90542e+02   -7.91207e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.01472e+03    6.08072e+04    9.34749e+04   -1.15840e+06    3.54080e+03
+      Potential
+   -9.71280e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         105000      210.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.94647e+03    1.10181e+04    1.12988e+04    7.16448e+02   -6.98571e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.07377e+03    6.09210e+04    9.36509e+04   -1.15748e+06    3.52192e+03
+      Potential
+   -9.70032e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         110000      220.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.72802e+03    1.07759e+04    1.12342e+04    7.57705e+02   -6.98680e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.06973e+03    6.11871e+04    9.42023e+04   -1.15712e+06    3.56435e+03
+      Potential
+   -9.69302e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         115000      230.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.79775e+03    1.11594e+04    1.11865e+04    6.60871e+02   -7.39260e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.02786e+03    6.09770e+04    9.34694e+04   -1.15700e+06    3.54889e+03
+      Potential
+   -9.69907e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         120000      240.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.66081e+03    1.10242e+04    1.12061e+04    7.35482e+02   -6.53978e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.05639e+03    6.09955e+04    9.40959e+04   -1.15981e+06    3.48053e+03
+      Potential
+   -9.72208e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         125000      250.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.70678e+03    1.12228e+04    1.13120e+04    6.92924e+02   -7.38362e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.14691e+03    6.05291e+04    9.44167e+04   -1.15734e+06    3.52379e+03
+      Potential
+   -9.69525e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         130000      260.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.93926e+03    1.09901e+04    1.12467e+04    7.12537e+02   -7.03720e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.97037e+03    6.07857e+04    9.25835e+04   -1.15503e+06    3.60673e+03
+      Potential
+   -9.68899e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         135000      270.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.99728e+03    1.09635e+04    1.12783e+04    7.15860e+02   -7.17200e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.95164e+03    6.09990e+04    9.34362e+04   -1.15741e+06    3.50023e+03
+      Potential
+   -9.70288e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         140000      280.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.03456e+03    1.07372e+04    1.13764e+04    6.76813e+02   -7.10799e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.90734e+03    6.08175e+04    9.33345e+04   -1.15672e+06    3.70650e+03
+      Potential
+   -9.69840e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         145000      290.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.00638e+03    1.10401e+04    1.13676e+04    7.18695e+02   -7.19786e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.90666e+03    6.07199e+04    9.31619e+04   -1.15893e+06    3.50964e+03
+      Potential
+   -9.72219e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         150000      300.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.88779e+03    1.09552e+04    1.13552e+04    6.43675e+02   -7.60213e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.06910e+03    6.09927e+04    9.23086e+04   -1.15550e+06    3.50694e+03
+      Potential
+   -9.69540e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         155000      310.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.86565e+03    1.11696e+04    1.11975e+04    6.83349e+02   -7.59337e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.01917e+03    6.08196e+04    9.25619e+04   -1.15805e+06    3.50212e+03
+      Potential
+   -9.71988e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         160000      320.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.69426e+03    1.12652e+04    1.11581e+04    7.26367e+02   -7.26248e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.11187e+03    6.11868e+04    9.34057e+04   -1.15763e+06    3.49452e+03
+      Potential
+   -9.70317e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         165000      330.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.88533e+03    1.10714e+04    1.12940e+04    7.26546e+02   -7.31299e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.95834e+03    6.08113e+04    9.40987e+04   -1.15656e+06    3.53740e+03
+      Potential
+   -9.68906e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         170000      340.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.00317e+03    1.10969e+04    1.12385e+04    7.15621e+02   -7.62737e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.94042e+03    6.05578e+04    9.37480e+04   -1.15612e+06    3.59991e+03
+      Potential
+   -9.68983e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         175000      350.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.72441e+03    1.07813e+04    1.13249e+04    7.26327e+02   -7.30751e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.05476e+03    6.14324e+04    9.32843e+04   -1.15802e+06    3.54029e+03
+      Potential
+   -9.70887e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         180000      360.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.02856e+03    1.10436e+04    1.13045e+04    7.75552e+02   -7.22708e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.90876e+03    6.05112e+04    9.22590e+04   -1.15461e+06    3.47584e+03
+      Potential
+   -9.69025e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         185000      370.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.94221e+03    1.11043e+04    1.11741e+04    7.81224e+02   -7.02164e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.93855e+03    6.07446e+04    9.23700e+04   -1.15608e+06    3.47046e+03
+      Potential
+   -9.70256e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         190000      380.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.83830e+03    1.11013e+04    1.12805e+04    7.60243e+02   -7.05552e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.98845e+03    6.07631e+04    9.21513e+04   -1.15701e+06    3.52785e+03
+      Potential
+   -9.71300e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         195000      390.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.90512e+03    1.11985e+04    1.13511e+04    7.97331e+02   -7.70193e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.99602e+03    6.04614e+04    9.17810e+04   -1.15468e+06    3.45092e+03
+      Potential
+   -9.69507e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         200000      400.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.81469e+03    1.09181e+04    1.13605e+04    7.22225e+02   -7.99529e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.01580e+03    6.08811e+04    9.19806e+04   -1.15644e+06    3.65466e+03
+      Potential
+   -9.70893e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         205000      410.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.79175e+03    1.11585e+04    1.12477e+04    7.47332e+02   -6.74520e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.96057e+03    6.05892e+04    9.44658e+04   -1.16039e+06    3.57283e+03
+      Potential
+   -9.72530e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         210000      420.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.77047e+03    1.10454e+04    1.12352e+04    6.61448e+02   -6.88453e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.96655e+03    6.09570e+04    9.25648e+04   -1.15799e+06    3.52168e+03
+      Potential
+   -9.71955e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         215000      430.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.88704e+03    1.06578e+04    1.13087e+04    7.01975e+02   -7.15439e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.98133e+03    6.11232e+04    9.34209e+04   -1.15668e+06    3.68553e+03
+      Potential
+   -9.69628e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         220000      440.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.88446e+03    1.11493e+04    1.11929e+04    6.90154e+02   -7.56733e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.01312e+03    6.06309e+04    9.26977e+04   -1.15547e+06    3.49686e+03
+      Potential
+   -9.69475e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         225000      450.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.81818e+03    1.10435e+04    1.12883e+04    7.03400e+02   -7.09722e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.97099e+03    6.08956e+04    9.31980e+04   -1.15712e+06    3.54228e+03
+      Potential
+   -9.70365e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         230000      460.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.90581e+03    1.10165e+04    1.11939e+04    7.22938e+02   -7.43357e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.03114e+03    6.06506e+04    9.30106e+04   -1.15663e+06    3.53710e+03
+      Potential
+   -9.70309e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         235000      470.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.83413e+03    1.09862e+04    1.12122e+04    7.30052e+02   -7.22690e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.99657e+03    6.07442e+04    9.27983e+04   -1.15577e+06    3.48542e+03
+      Potential
+   -9.69706e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         240000      480.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.02827e+03    1.11187e+04    1.12765e+04    7.41891e+02   -6.96134e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.97676e+03    6.08734e+04    9.36403e+04   -1.15756e+06    3.47982e+03
+      Potential
+   -9.70120e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         245000      490.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.83842e+03    1.10834e+04    1.12288e+04    7.51460e+02   -7.33198e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.98379e+03    6.08819e+04    9.26234e+04   -1.15710e+06    3.53029e+03
+      Potential
+   -9.70916e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         250000      500.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.81369e+03    1.10763e+04    1.11741e+04    7.56185e+02   -6.44181e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.05506e+03    6.07849e+04    9.13044e+04   -1.15518e+06    3.54264e+03
+      Potential
+   -9.70320e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         255000      510.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.90720e+03    1.08349e+04    1.11107e+04    7.05366e+02   -6.67318e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.05687e+03    6.12132e+04    9.16416e+04   -1.15549e+06    3.50880e+03
+      Potential
+   -9.70179e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         260000      520.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.81219e+03    1.14157e+04    1.10958e+04    7.47783e+02   -6.20052e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.00490e+03    6.08302e+04    9.27139e+04   -1.15583e+06    3.54749e+03
+      Potential
+   -9.69284e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         265000      530.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.03922e+03    1.09122e+04    1.13332e+04    7.42302e+02   -7.11325e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.05757e+03    6.11390e+04    9.31770e+04   -1.15681e+06    3.49594e+03
+      Potential
+   -9.69625e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         270000      540.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.84189e+03    1.12324e+04    1.12607e+04    7.39011e+02   -7.44699e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.95630e+03    6.09615e+04    9.31555e+04   -1.15489e+06    3.63634e+03
+      Potential
+   -9.67852e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         275000      550.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.95477e+03    1.07301e+04    1.13411e+04    7.59429e+02   -6.86092e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.01130e+03    6.08412e+04    9.33156e+04   -1.15828e+06    3.45134e+03
+      Potential
+   -9.71562e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         280000      560.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.77297e+03    1.06925e+04    1.13858e+04    7.38479e+02   -7.29963e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.98779e+03    6.14922e+04    9.33608e+04   -1.15852e+06    3.51877e+03
+      Potential
+   -9.71300e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         285000      570.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.74731e+03    1.11347e+04    1.13437e+04    7.25513e+02   -6.59521e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.91495e+03    6.09673e+04    9.30311e+04   -1.15790e+06    3.52243e+03
+      Potential
+   -9.71168e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         290000      580.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.85573e+03    1.10038e+04    1.12315e+04    7.84490e+02   -7.19363e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.95521e+03    6.11267e+04    9.23174e+04   -1.15718e+06    3.51204e+03
+      Potential
+   -9.71110e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         295000      590.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.76958e+03    1.10234e+04    1.12495e+04    6.52020e+02   -7.12986e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.09901e+03    6.10742e+04    9.23670e+04   -1.15754e+06    3.45229e+03
+      Potential
+   -9.71565e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         300000      600.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.93541e+03    1.10130e+04    1.13813e+04    6.95701e+02   -7.12582e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.88854e+03    6.07196e+04    9.51752e+04   -1.15946e+06    3.54708e+03
+      Potential
+   -9.70815e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         305000      610.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.85756e+03    1.11423e+04    1.12540e+04    7.16466e+02   -7.42913e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.04678e+03    6.08073e+04    9.26206e+04   -1.15634e+06    3.43554e+03
+      Potential
+   -9.70205e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         310000      620.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.72299e+03    1.07956e+04    1.12732e+04    7.38064e+02   -7.15282e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.10822e+03    6.06689e+04    9.26625e+04   -1.15631e+06    3.53883e+03
+      Potential
+   -9.70513e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         315000      630.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.88307e+03    1.12618e+04    1.12913e+04    7.25187e+02   -8.07053e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.96325e+03    6.06270e+04    9.46274e+04   -1.15996e+06    3.59176e+03
+      Potential
+   -9.71800e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         320000      640.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.83981e+03    1.11853e+04    1.13392e+04    6.85388e+02   -8.13735e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.06352e+03    6.08764e+04    9.19605e+04   -1.15552e+06    3.46256e+03
+      Potential
+   -9.69924e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         325000      650.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.01701e+03    1.08855e+04    1.12592e+04    7.38205e+02   -7.03766e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.11186e+03    6.07177e+04    9.30147e+04   -1.15636e+06    3.58990e+03
+      Potential
+   -9.69725e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         330000      660.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.85520e+03    1.11859e+04    1.11803e+04    7.43559e+02   -7.36270e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.02682e+03    6.07879e+04    9.19890e+04   -1.15557e+06    3.59596e+03
+      Potential
+   -9.69945e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         335000      670.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.86024e+03    1.08611e+04    1.12776e+04    7.54950e+02   -7.22854e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.98828e+03    6.07695e+04    9.24059e+04   -1.15500e+06    3.50497e+03
+      Potential
+   -9.69302e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         340000      680.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.78354e+03    1.11215e+04    1.11472e+04    6.33525e+02   -6.99524e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.02921e+03    6.05817e+04    9.17068e+04   -1.15596e+06    3.43600e+03
+      Potential
+   -9.71223e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         345000      690.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.83908e+03    1.15122e+04    1.11335e+04    6.85343e+02   -7.17345e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.00892e+03    6.04723e+04    9.31816e+04   -1.15735e+06    3.51187e+03
+      Potential
+   -9.70726e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         350000      700.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.94018e+03    1.12391e+04    1.11169e+04    7.73486e+02   -7.83885e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.03141e+03    6.07206e+04    9.28051e+04   -1.15605e+06    3.57233e+03
+      Potential
+   -9.69635e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         355000      710.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.08178e+03    1.10218e+04    1.11992e+04    6.96115e+02   -7.66917e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.93631e+03    6.07374e+04    9.30549e+04   -1.15762e+06    3.51281e+03
+      Potential
+   -9.71152e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         360000      720.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.89824e+03    1.10182e+04    1.11379e+04    7.24789e+02   -8.12267e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.00512e+03    6.08929e+04    9.34845e+04   -1.15809e+06    3.54755e+03
+      Potential
+   -9.71190e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         365000      730.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.94691e+03    1.08373e+04    1.11941e+04    7.13437e+02   -6.88944e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.95184e+03    6.09611e+04    9.31284e+04   -1.15683e+06    3.48569e+03
+      Potential
+   -9.70305e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         370000      740.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.87561e+03    1.10238e+04    1.12271e+04    7.28307e+02   -7.10975e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.02799e+03    6.09260e+04    9.15951e+04   -1.15452e+06    3.62478e+03
+      Potential
+   -9.69200e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         375000      750.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.91117e+03    1.09335e+04    1.12072e+04    7.24170e+02   -6.85022e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.03696e+03    6.06893e+04    9.33850e+04   -1.15728e+06    3.48293e+03
+      Potential
+   -9.70593e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         380000      760.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.74135e+03    1.11246e+04    1.11935e+04    6.84917e+02   -7.42946e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.95313e+03    6.07058e+04    9.35855e+04   -1.15809e+06    3.49370e+03
+      Potential
+   -9.71354e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         385000      770.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.99927e+03    1.11338e+04    1.10601e+04    6.93255e+02   -7.35443e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.99388e+03    6.07298e+04    9.21846e+04   -1.15519e+06    3.59099e+03
+      Potential
+   -9.69540e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         390000      780.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.86748e+03    1.10042e+04    1.12594e+04    7.43107e+02   -6.96734e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.93526e+03    6.09052e+04    9.40175e+04   -1.15839e+06    3.57822e+03
+      Potential
+   -9.70772e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         395000      790.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.79933e+03    1.10207e+04    1.10206e+04    6.85568e+02   -7.50508e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.93338e+03    6.07189e+04    9.16427e+04   -1.15531e+06    3.57832e+03
+      Potential
+   -9.70665e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         400000      800.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.86397e+03    1.07882e+04    1.10989e+04    6.99208e+02   -7.32901e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.90736e+03    6.08722e+04    9.29316e+04   -1.15810e+06    3.50209e+03
+      Potential
+   -9.72170e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         405000      810.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.81927e+03    1.07673e+04    1.13482e+04    6.94709e+02   -7.64309e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.99916e+03    6.06002e+04    9.39406e+04   -1.15769e+06    3.63222e+03
+      Potential
+   -9.70655e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         410000      820.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.81244e+03    1.08612e+04    1.12456e+04    6.79116e+02   -7.54907e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.00647e+03    6.09147e+04    9.23593e+04   -1.15627e+06    3.60391e+03
+      Potential
+   -9.70545e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         415000      830.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.79945e+03    1.08477e+04    1.12820e+04    7.13975e+02   -7.70257e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.07761e+03    6.08965e+04    9.39205e+04   -1.15744e+06    3.54797e+03
+      Potential
+   -9.70126e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         420000      840.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.86958e+03    1.11177e+04    1.11746e+04    7.15504e+02   -8.18471e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.99924e+03    6.07444e+04    9.37895e+04   -1.15793e+06    3.59742e+03
+      Potential
+   -9.70740e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         425000      850.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.77089e+03    1.10478e+04    1.12433e+04    7.53311e+02   -7.10232e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.99757e+03    6.09976e+04    9.28454e+04   -1.15732e+06    3.56710e+03
+      Potential
+   -9.70805e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         430000      860.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.93649e+03    1.07116e+04    1.13136e+04    7.77043e+02   -7.66615e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.08888e+03    6.08864e+04    9.28594e+04   -1.15750e+06    3.63560e+03
+      Potential
+   -9.71061e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         435000      870.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.77685e+03    1.12330e+04    1.11401e+04    6.86554e+02   -7.49997e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.12794e+03    6.07302e+04    9.29719e+04   -1.15794e+06    3.49697e+03
+      Potential
+   -9.71522e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         440000      880.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.05323e+03    1.07645e+04    1.11858e+04    7.51749e+02   -7.85319e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.02489e+03    6.06981e+04    9.27785e+04   -1.15697e+06    3.59087e+03
+      Potential
+   -9.70909e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         445000      890.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.05448e+03    1.08711e+04    1.12274e+04    7.18070e+02   -7.23246e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.07223e+03    6.04662e+04    9.29544e+04   -1.15674e+06    3.49007e+03
+      Potential
+   -9.70609e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         450000      900.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.69342e+03    1.12223e+04    1.11725e+04    6.63586e+02   -7.51274e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.06905e+03    6.05893e+04    9.32578e+04   -1.15680e+06    3.50944e+03
+      Potential
+   -9.70369e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         455000      910.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.87166e+03    1.07738e+04    1.11951e+04    7.64706e+02   -7.09111e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.97830e+03    6.06126e+04    9.32868e+04   -1.15619e+06    3.57330e+03
+      Potential
+   -9.69847e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         460000      920.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.69100e+03    1.10189e+04    1.12602e+04    6.87853e+02   -7.36299e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.00016e+03    6.05759e+04    9.39226e+04   -1.15659e+06    3.60036e+03
+      Potential
+   -9.69571e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         465000      930.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.93564e+03    1.09295e+04    1.11101e+04    7.56557e+02   -7.20406e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.96242e+03    6.09937e+04    9.43598e+04   -1.15936e+06    3.56098e+03
+      Potential
+   -9.71476e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         470000      940.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.73748e+03    1.08932e+04    1.12578e+04    6.69618e+02   -7.46194e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.09349e+03    6.08047e+04    9.45515e+04   -1.16067e+06    3.45735e+03
+      Potential
+   -9.72954e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         475000      950.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.77514e+03    1.07845e+04    1.13283e+04    7.66489e+02   -7.15546e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.03985e+03    6.10231e+04    9.28281e+04   -1.15575e+06    3.52294e+03
+      Potential
+   -9.69393e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         480000      960.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.94693e+03    1.08304e+04    1.13133e+04    7.09048e+02   -8.36392e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.99315e+03    6.10794e+04    9.37275e+04   -1.15874e+06    3.53275e+03
+      Potential
+   -9.71448e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         485000      970.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.93197e+03    1.10215e+04    1.11316e+04    6.76864e+02   -7.09377e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.03539e+03    6.11070e+04    9.36205e+04   -1.15933e+06    3.51373e+03
+      Potential
+   -9.72003e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         490000      980.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.96877e+03    1.10305e+04    1.12685e+04    7.36700e+02   -5.67599e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.07746e+03    6.10017e+04    9.28937e+04   -1.15665e+06    3.58616e+03
+      Potential
+   -9.69651e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         495000      990.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    4.00676e+03    1.11927e+04    1.11311e+04    7.05247e+02   -6.53288e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    3.05359e+03    6.11348e+04    9.15579e+04   -1.15655e+06    3.54711e+03
+      Potential
+   -9.70878e+05
+
+Atom distribution over 1 domains: av 74143 stddev 0 min 74143 max 74143
+           Step           Time
+         500000     1000.00000
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    3.92247e+03    1.11547e+04    1.10562e+04    6.87758e+02   -7.01767e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.95248e+03    6.11270e+04    9.29859e+04   -1.15742e+06    3.46401e+03
+      Potential
+   -9.70772e+05
+
+
+	M E G A - F L O P S   A C C O U N T I N G
+
+ NB=Group-cutoff nonbonded kernels    NxN=N-by-N cluster Verlet kernels
+ RF=Reaction-Field  VdW=Van der Waals  QSTab=quadratic-spline table
+ W3=SPC/TIP3p  W4=TIP4p (single or pairs)
+ V&F=Potential and force  V=Potential only  F=Force only
+
+ Computing:                               M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------------
+ Pair Search distance check            4097.014538       36873.131     4.0
+ NxN Ewald Elec. + LJ [V&F]            6671.166880      860580.528    94.1
+ NxN Ewald Elec. [V&F]                   51.387424        4316.544     0.5
+ 1,4 nonbonded interactions               1.202607         108.235     0.0
+ Calc Weights                            22.465329         808.752     0.1
+ Spread Q Bspline                       479.260352         958.521     0.1
+ Gather F Bspline                       479.260352        2875.562     0.3
+ 3D-FFT                                 773.188330        6185.507     0.7
+ Solve PME                               11.271600         721.382     0.1
+ CG-CoM                                   7.562586          22.688     0.0
+ Bonds                                    0.232401          13.712     0.0
+ Propers                                  1.150390         263.439     0.0
+ Impropers                                0.079184          16.470     0.0
+ Virial                                   7.492988         134.874     0.0
+ CMAP                                     0.030805          52.368     0.0
+ Urey-Bradley                             0.839613         153.649     0.0
+-----------------------------------------------------------------------------
+ Total                                                  914085.361   100.0
+-----------------------------------------------------------------------------
+
+
+    D O M A I N   D E C O M P O S I T I O N   S T A T I S T I C S
+
+ av. #atoms communicated per step for force:  2 x 0.0
+ av. #atoms communicated per step for LINCS:  2 x 0.0
+
+
+      R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
+
+On 1 MPI rank, each using 4 OpenMP threads
+
+ Activity:              Num   Num      Call    Wall time         Giga-Cycles
+                        Ranks Threads  Count      (s)         total sum    %
+--------------------------------------------------------------------------------
+ Domain decomp.            1    4        101       1.414          6.300   6.3
+ Neighbor search           1    4        101       6.224         27.724  27.6
+ Force                     1    4        101      13.567         60.436  60.1
+ PME mesh                  1    4        101       0.647          2.883   2.9
+ NB X/F buffer ops.        1    4        202       0.045          0.200   0.2
+ Rest                                              0.664          2.958   2.9
+--------------------------------------------------------------------------------
+ Total                                            22.561        100.500 100.0
+--------------------------------------------------------------------------------
+ Breakdown of PME mesh activities
+--------------------------------------------------------------------------------
+ PME spread                1    4        101       0.246          1.098   1.1
+ PME gather                1    4        101       0.183          0.816   0.8
+ PME 3D-FFT                1    4        202       0.156          0.693   0.7
+ PME solve Elec            1    4        101       0.061          0.272   0.3
+--------------------------------------------------------------------------------
+
+NOTE: 6 % of the run time was spent in domain decomposition,
+      28 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+               Core t (s)   Wall t (s)        (%)
+       Time:       90.241       22.561      400.0
+                 (ns/day)    (hour/ns)    (ms/step)  (Matom*steps/s) 
+Performance:     3829.625        0.006        0.045         1643.171 
+Finished mdrun on rank 0 Sat Apr 25 12:42:14 2026
+
