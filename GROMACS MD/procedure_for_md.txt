@@ -90,11 +90,12 @@ https://cgenff.com
 4. obabel LIG.cgenff.mol2 -O lig_h.pdb
 5. conda deactivate obabel_env, then conda activate md_core
 6. gmx editconf -f lig_h.pdb -o lig_h.gro
-7. cat FtsZ_processed.pdb lig_h.pdb > complex_correct.pdb
-8. Open complex_correct.pdb in VSCode, remove everything line beside ATOM only records
+7. gmx editconf -f FtsZ_processed.gro -o FtsZ_processed.pdb 
+8. cat FtsZ_processed.pdb lig_h.pdb > complex_correct.pdb
+9. Open complex_correct.pdb in VSCode, remove everything line beside ATOM only records
     --> no TER, END, MODEL, ENDMDL, MASTER, TITLE, REMARK, CRYST1, SEQRES, or CONECT records
-9. Save the changes
-10. In terminal: gmx editconf -f complex_correct.pdb -o complex_correct.gro
+10. Save the changes
+11. In terminal: gmx editconf -f complex_correct.pdb -o complex_correct.gro
 
 #----------------------
 # Define Simulation Box
