@@ -42,7 +42,7 @@ Main Results: The main outputs are the static binding affinity (e.g. stdout128.t
 
     - Results/: directory that contains all 3 runs with the results from docking and MD including the generated plots.
 
-    - Results/result_""/MD/post_processing_files/figures: directory containing generated plots via plot.py 
+    - Results/result_""/MD/figures: directory containing generated plots via plot.py 
 
     - *.xtc: compressed trajectory files from the 1 ns MD simulation
 
