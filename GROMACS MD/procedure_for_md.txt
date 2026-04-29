@@ -34,6 +34,7 @@ https://cgenff.com
 1. Make sure to have md_workflow.sh downloaded
 2. Make sure to have all the dependent files downloaded/made (files from GROMACS MD directory)
 3. In terminal, type: bash md_workflow.sh 
+4. Type 10 & press enter for full MD workflow option (to begin from docking)
 
 
 ## BELOW IS THE PURELY MANUALLY VERSION OF PROCEDURE ##
