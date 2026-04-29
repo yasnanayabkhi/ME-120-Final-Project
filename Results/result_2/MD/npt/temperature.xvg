@@ -1,0 +1,45 @@
+# This file was created Thu Apr 23 22:46:14 2026
+# Created by:
+#                :-) GROMACS - gmx energy, 2026.0-conda_forge (-:
+# 
+# Executable:   /opt/miniconda3/envs/md_core/bin.ARM_NEON_ASIMD/gmx
+# Data prefix:  /opt/miniconda3/envs/md_core
+# Working dir:  /Users/louisrathel/Desktop/ME120/Final_Project_Work_Folder
+# Command line:
+#   gmx energy -f nvt.edr -o temperature.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Green Red Orange Magenta Azure Cyan Skyblue
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(K)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Temperature"
+    0.000000  310.211029
+    5.000000  287.141541
+   10.000000  303.694489
+   15.000000  309.024078
+   20.000000  309.771027
+   25.000000  310.312439
+   30.000000  307.825073
+   35.000000  311.883850
+   40.000000  310.503845
+   45.000000  309.676147
+   50.000000  308.710815
+   55.000000  309.909882
+   60.000000  310.296997
+   65.000000  310.482513
+   70.000000  310.777466
+   75.000000  311.258606
+   80.000000  310.210510
+   85.000000  309.790680
+   90.000000  310.423645
+   95.000000  311.149384
+  100.000000  310.884308
