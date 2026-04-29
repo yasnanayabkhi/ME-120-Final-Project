@@ -75,11 +75,11 @@ Download a text editor such as VSCode:
     - https://code.visualstudio.com/download 
 
 Needed 3 conda environments for this MD procedure:
-    - Download obabel_env.yml, in terminal, type: 
+ - Download obabel_env.yml, in terminal, type: 
             conda env create -f obabel_env.yml
-    - Download md_core.yml, in terminal, type: 
+- Download md_core.yml, in terminal, type: 
             conda env create -f md_core.yml
-    - Download md_analysis.yml, in terminal, type: 
+- Download md_analysis.yml, in terminal, type: 
             conda env create -f md_analysis.yml 
 
 Download chimera for editing and conversion of pdbs: 
@@ -111,23 +111,23 @@ Make an CGenFF account on the website below:
 ## Expected Outputs
 
 The main result files are: 
-        - stdout128.txt (AutoDock Vina Results)
-        - FtsZ-Dacomitinib128.pdb (Docked Complex using Webina ouput)
-        - md.gro 
-        - md.xtc
-        - md.tpr
-        - md_center.xtc
-        - md_fit.xtc 
+- stdout128.txt (AutoDock Vina Results)
+- FtsZ-Dacomitinib128.pdb (Docked Complex using Webina ouput)
+- md.gro 
+- md.xtc
+- md.tpr
+- md_center.xtc
+- md_fit.xtc 
 
 The main figures are:
-        - Dacomitinib_FtsZ_gyrate.png
-        - Dacomitinib_FtsZ_hbond_protein_lig.png 
-        - Dacomitinib_FtsZ_interaction_energy.png
-        - Dacomitinib_FtsZ_mindist.png
-        - Dacomitinib_FtsZ_rmsd_dist.png
-        - Dacomitinib_FtsZ_rmsd.png
-        - Dacomitinib_FtsZ_rmsf.png
-        - Dacomitinib_FtsZ_sasa.png
+- Dacomitinib_FtsZ_gyrate.png
+- Dacomitinib_FtsZ_hbond_protein_lig.png 
+- Dacomitinib_FtsZ_interaction_energy.png
+- Dacomitinib_FtsZ_mindist.png
+- Dacomitinib_FtsZ_rmsd_dist.png
+- Dacomitinib_FtsZ_rmsd.png
+- Dacomitinib_FtsZ_rmsf.png
+- Dacomitinib_FtsZ_sasa.png
 
 
 ## Runtime Notes And Limitations
