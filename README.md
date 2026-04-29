@@ -186,7 +186,7 @@ Limitations: Workflow requires multiple special dependencies, excellent file org
 - Tool - Claude Haiku 4.5 via claude.ai, April 2026
 - Purpose - Used to generate a md_workflow.sh to run the entire MD to plot generation into one script for reproducibility specifically for this project.  
 - Prompts - “I have attached my procedure_for_md.txt, generate me a script based on this information, make sure it chooses its input automatically based on what I wrote in the procedure”
-Output - “I’ll create a comprehensive .sh script that converts this procedure into an automated workflow. I have built-in pauses for user interaction. Here is the script, md_workflow.sh.”
+- Output - “I’ll create a comprehensive .sh script that converts this procedure into an automated workflow. I have built-in pauses for user interaction. Here is the script, md_workflow.sh.”
 - Modifications - I had to make some modifications. I had to add more pre-built pauses (thru log) that were user interactions because of the user’s need to manually change some files such as topol.top, lig.prm, etc. For example:
     log "Please manually open topol.top, after the charmm36.itp..., type:
         ;Include ligand parameters
