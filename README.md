@@ -174,12 +174,17 @@ Limitations: Workflow requires multiple special dependencies, excellent file org
 - Verification - Tested code and visualized produced pdb, whilst also looking at its contents of the parameter files to see if it generated everything properly. Some modifications to the lig.itp and lig.top were required after use of this script.
 
 
+
+
 - Tool - Claude Haiku 4.5 via claude.ai, April 2026
 - Purpose - Used to generate plots based on all the .xvg files made beforehand for data analysis visualization 
 - Prompts - “I want you to generate me a script to generate plots based on files given here. I made an index.ndx that gave group 21 LIG_heavy, protein stability was given by rmsd_FtsZ.xvg, ligand binding stability was given by rmsd_LIG.xvg, protein-ligand interaction energy was given by interaction_energy.xvg, hydrogen bonds given by hbond_protein_lig.xvg, radius of gyration was given by gyrate.xvg, contacts/packing was given by gmx mindist -s md.tpr -f md_fit.xtc -n index.ndx, SASA (burial) was given by sasa.xvg, RMSF was given by rmsf.xvg, cluster analysis was given by rmsd-clus.xpm and rmsd-dis.xvg, also did center of mass, I have attached all the files for reference”
 - Output - “Here is the script for generating all the plots from the protein-ligand MD simulation, it is called plot.py.
 - Modifications - Did not modify output. It had given proper graphs usable for the project. 
 - Verification - Tested code by running the plot.py and made sure the generated plots & means made sense for the data when looking into the .xvg files. Double checked the numbers had made sense. 
+
+
+
 
 
 - Tool - Claude Haiku 4.5 via claude.ai, April 2026
