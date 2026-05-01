@@ -1,6 +1,3 @@
 # Rules for files to ignored by github 
 
-*.xtc 
 *.trr
-*.tpr
-*.gro
