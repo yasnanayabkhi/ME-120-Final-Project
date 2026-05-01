@@ -1,4 +1,4 @@
-# Computational Study of Dacomitinib Inhibition of Staphylococcus Aureus FtsZ using Molecular Docking and Molecular Dynamics
+# Computational Study of Dacomitinib Inhibition of *S. Aureus* FtsZ using Molecular Docking and Molecular Dynamics
 
 
 ## Project Summary
